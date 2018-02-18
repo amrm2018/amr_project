@@ -13,11 +13,10 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
     }
 
     public void btn_login(View view) {
+        startActivity(new Intent(getApplicationContext(),Home_Activity.class));
     }
 
     public void btn_go_Register(View view) {
