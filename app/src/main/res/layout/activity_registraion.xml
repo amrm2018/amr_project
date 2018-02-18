@@ -8,24 +8,13 @@
     tools:context="atfalna.atfalna.Registraion_Activity"
     android:background="@drawable/bg_reg_1">
 
-    <TextView
-        android:id="@+id/tv_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="تسجيل جديد"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:gravity="center_horizontal" />
-
     <ScrollView
         android:id="@+id/scroll_1"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_reg_1"
-        tools:ignore="UnknownId">
+        android:backgroundTintMode="src_atop"
+        android:background="@drawable/bg_reg_1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,7 +113,6 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
-
             <TextView
                 android:id="@+id/tv_go_register"
                 android:onClick="btn_go_Login"
@@ -144,9 +132,15 @@
 
     </ScrollView>
 
-
-
-
-
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="تسجيل جديد"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>

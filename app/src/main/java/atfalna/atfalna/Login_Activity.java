@@ -21,5 +21,6 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void btn_go_Register(View view) {
+        startActivity(new Intent(getApplicationContext(),Registraion_Activity.class));
     }
 }
