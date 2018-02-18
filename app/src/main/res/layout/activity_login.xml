@@ -51,22 +51,19 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
             <EditText
                 android:id="@+id/ed_email_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/ed_pass_log"
-
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
                 android:hint="البريد الالكتروني"
                 android:inputType="textEmailAddress"
-                android:textColorHint="@color/colorRed"
+                android:textColorHint="@color/color3"
                 android:textStyle="bold" />
 
             <EditText
@@ -74,11 +71,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ed_email_log"
+                android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_horizontal"
                 android:hint="الرقم السري"
                 android:inputType="textPassword"
-                android:textColorHint="@color/colorRed"
+                android:textColorHint="@color/color3"
                 android:textStyle="bold" />
 
             <CheckBox

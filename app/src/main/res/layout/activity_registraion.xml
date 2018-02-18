@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="atfalna.atfalna.Registraion_Activity"
+    android:background="@drawable/bg_reg_1">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="تسجيل جديد"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:gravity="center_horizontal" />
+
+    <ScrollView
+        android:id="@+id/scroll_1"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_reg_1"
+        tools:ignore="UnknownId">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:id="@+id/ed_fullname_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="الاسم"
+                android:textColor="#000"
+                android:textColorHint="@color/colorBlack"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/ed_email_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="البريد الالكتروني"
+                android:textColor="#000"
+                android:textColorHint="@color/colorBlack"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/ed_pass_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="الرقم السري"
+                android:textColor="#000"
+                android:textColorHint="@color/colorBlack"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/ed_comf_pass_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="اعادة الرقم السري"
+                android:textColor="#000"
+                android:textColorHint="#fff"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/ed_phone_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="التليفون"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rdo_male"
+                    android:text="ذكر"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rdo_female"
+                    android:text="أنثي"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/styel_btn_register"
+                android:text="أشتراك"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_go_register"
+                android:onClick="btn_go_Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أنا بالفعل لدي حساب ؟ تسجيل دخول"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

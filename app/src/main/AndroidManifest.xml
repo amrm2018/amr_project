@@ -16,9 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login_Activity"
-            android:theme="@style/AppTheme_NoActionBar"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Login_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity
+            android:name=".Registraion_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity android:name=".Home_Activity"></activity>
     </application>
 
 </manifest>
