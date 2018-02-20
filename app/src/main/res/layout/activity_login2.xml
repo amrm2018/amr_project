@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="atfalna.atfalna.Login2_Activity"
+    android:padding="15dp"
+    android:background="@color/color6">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardv_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="3dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/img_1"
+                android:src="@drawable/atfalna"/>
+
+
+                    <EditText
+                        android:id="@+id/ed_email_log2"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/img_1"
+                        android:hint="البريد الالكترونى"
+                        android:inputType="textWebEmailAddress"
+                        android:gravity="center"
+                        android:background="@drawable/style_ed_login"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/color6"
+                        android:textColorHint="@color/color6"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:id="@+id/ed_pass_log2"
+                        android:layout_below="@id/ed_email_log2"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:background="@drawable/style_ed_login"
+                        android:hint="الرقم السري"
+                        android:inputType="textPassword"
+                        android:gravity="center"
+                        android:textColor="@color/color6"
+                        android:textColorHint="@color/color6"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/rem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تذكرنى"
+                        android:layout_below="@id/ed_pass_log2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/color2"/>
+
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/ed_pass_log2"
+                        android:layout_toStartOf="@id/rem"
+                        android:layout_marginRight="20dp"
+                        android:shadowColor="@color/color6"
+                        android:checked="true" />
+
+                    <Button
+                        android:id="@+id/btn_login2"
+                        android:onClick="btn_go_Home2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_below="@id/switch1"
+                        android:background="@drawable/styel_btn_login"
+                        android:text="دخول"
+                        android:textColor="#bdf3bb72"
+                        android:textSize="22sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/btn_go_register"
+                        android:onClick="btn_go_Register2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/btn_login2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/styel_btn_register"
+                        android:text="أشتراك جديد"
+                        android:textColor="#f7ad5678"
+                        android:textSize="22sp" />
+
+                </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

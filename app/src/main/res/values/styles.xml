@@ -19,4 +19,22 @@
         <item name="colorAccent">@color/color2</item>
     </style>
 
+    <style name="AppTheme_NoActionBar2" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- This is the color of the Toolbar -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- This is the color of the Status bar -->
+        <item name="colorPrimaryDark">@color/color6</item>
+        <item name="colorAccent">@color/color7</item>
+    </style>
+
+    <style name="AppTheme_NoActionBar_home" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- This is the color of the Toolbar -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- This is the color of the Status bar -->
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/color2</item>
+    </style>
+
 </resources>

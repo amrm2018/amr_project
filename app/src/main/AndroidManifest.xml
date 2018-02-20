@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme_NoActionBar">
+
         <activity android:name=".Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,15 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Home2_Activity"
+            android:theme="@style/AppTheme_NoActionBar_home"/>
+
         <activity
-            android:name=".Login_Activity"
+            android:name=".Login2_Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_NoActionBar" />
-        <activity
-            android:name=".Registraion_Activity"
+            android:theme="@style/AppTheme_NoActionBar2" />
+
+        <activity android:name=".Registration2_Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_NoActionBar" />
-        <activity android:name=".Home_Activity"></activity>
+            android:theme="@style/AppTheme_NoActionBar2"></activity>
     </application>
 
 </manifest>
