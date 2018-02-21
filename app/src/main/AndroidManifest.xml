@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="atfalna.atfalna">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme_NoActionBar">
-
         <activity android:name=".Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,18 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Home2_Activity"
-            android:theme="@style/AppTheme_NoActionBar_home"/>
-
         <activity
-            android:name=".Login2_Activity"
+            android:name=".Home2_Activity"
+            android:theme="@style/AppTheme_NoActionBar_home" />
+        <activity
+            android:name=".Login_Register_Java.Login2_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar2" />
+        <activity
+            android:name=".Login_Register_Java.Registration2_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_NoActionBar2" />
 
-        <activity android:name=".Registration2_Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_NoActionBar2"></activity>
+        <activity android:name=".Create_Post_Found_Activity"
+            android:theme="@style/AppTheme_NoActionBar_Post_found"/>
+
+        <activity android:name=".Create_Post_Missing_Activity"></activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="atfalna.atfalna.Registration2_Activity"
+    tools:context="atfalna.atfalna.Login_Register_Java.Registration2_Activity"
     android:background="@color/color6"
     android:padding="10dp">
 
@@ -81,7 +81,7 @@
                         android:gravity="center"/>
 
                     <EditText
-                        android:id="@+id/ed_pass_reg2"
+                        android:id="@+id/ed_pass1_reg2"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
@@ -162,6 +162,7 @@
 
                     <Button
                         android:id="@+id/btn_login2"
+                        android:onClick="btn_Reg"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="25dp"

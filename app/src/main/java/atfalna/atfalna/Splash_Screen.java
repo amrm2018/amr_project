@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import atfalna.atfalna.Login_Register_Java.Login2_Activity;
+
 public class Splash_Screen extends AppCompatActivity {
 
     @Override

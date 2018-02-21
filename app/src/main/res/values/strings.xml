@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Atfalna</string>
+
+
+    <string-array name="spinner_dey">
+        <item> يناير  1</item>
+        <item> فبراير  2</item>
+        <item> مارس  3</item>
+        <item> ابريل  4</item>
+        <item> مايو  5</item>
+        <item> يونيو  6</item>
+        <item> يوليو  7</item>
+        <item> أغسطس  8</item>
+        <item> ستمبر  9</item>
+        <item> أكتوبر  10</item>
+        <item> نوفبمر 11</item>
+        <item> ديسمبر  12</item>
+    </string-array>
+
+    <string-array name="spinner_city">
+        <item>القاهرة</item>
+        <item>الجيزة</item>
+        <item>الشرقية</item>
+        <item> ابريل  4</item>
+        <item> مايو  5</item>
+        <item> يونيو  6</item>
+        <item> يوليو  7</item>
+        <item> أغسطس  8</item>
+        <item> ستمبر  9</item>
+        <item> أكتوبر  10</item>
+        <item> نوفبمر 11</item>
+        <item> ديسمبر  12</item>
+    </string-array>
+
+
 </resources>
