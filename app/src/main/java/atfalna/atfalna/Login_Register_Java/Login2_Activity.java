@@ -31,10 +31,10 @@ public class Login2_Activity extends AppCompatActivity {
         Login_email=findViewById(R.id.ed_email_log2);
         Login_password=findViewById(R.id.ed_pass_log2);
         Button btn_Login = findViewById(R.id.btn_login2);
+
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Login_btn_Login(view);
             }
         });
@@ -52,6 +52,7 @@ public class Login2_Activity extends AppCompatActivity {
 
         String Log_in_email=Login_email.getText().toString().trim();
         String Log_in_password=Login_password.getText().toString().trim();
+
 
         Response.Listener<String>responseListener = new Response.Listener<String>() {
             @Override

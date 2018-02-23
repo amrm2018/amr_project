@@ -21,6 +21,7 @@ public class Registration2_Activity extends AppCompatActivity {
 
     EditText name , email , password1 , password2 , phone ;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +77,7 @@ public class Registration2_Activity extends AppCompatActivity {
     }
 
 
-
-
-
-
+    public void back_finish(View view) {
+        finish();
+    }
 }

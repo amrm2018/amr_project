@@ -36,7 +36,7 @@
                         android:layout_below="@id/img_1"
                         android:hint="البريد الالكترونى"
                         android:inputType="textWebEmailAddress"
-                        android:gravity="center"
+                        android:gravity="right|center_vertical"
                         android:background="@drawable/style_ed_login"
                         android:layout_marginTop="15dp"
                         android:layout_marginLeft="10dp"
@@ -45,7 +45,8 @@
                         android:paddingRight="5dp"
                         android:textColor="@color/color6"
                         android:textColorHint="@color/color6"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/ic_email_black"/>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -60,10 +61,11 @@
                         android:background="@drawable/style_ed_login"
                         android:hint="الرقم السري"
                         android:inputType="textPassword"
-                        android:gravity="center"
+                        android:gravity="right|center_vertical"
                         android:textColor="@color/color6"
                         android:textColorHint="@color/color6"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/ic_lock_black"/>
 
                     <TextView
                         android:id="@+id/rem"
@@ -86,7 +88,7 @@
                         android:layout_below="@+id/ed_pass_log2"
                         android:layout_toStartOf="@id/rem"
                         android:layout_marginRight="20dp"
-                        android:shadowColor="@color/color6"
+                        android:shadowColor="@color/color2"
                         android:checked="true" />
 
                     <Button
