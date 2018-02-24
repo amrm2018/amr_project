@@ -123,18 +123,18 @@
                         android:id="@+id/ed_phone_reg2"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/style_ed_login"
+                        android:gravity="right|center_vertical"
                         android:hint="رقم الهاتف"
+                        android:inputType="number"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:textColor="@color/color6"
                         android:textColorHint="@color/color6"
-                        android:textStyle="bold"
-                        android:inputType="number"
-                        android:gravity="right|center_vertical"/>
+                        android:textStyle="bold" />
 
                     <RadioGroup
                         android:layout_width="match_parent"

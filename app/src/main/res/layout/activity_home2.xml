@@ -28,6 +28,15 @@
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
 
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_logout"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="btn_Logout"/>
+
         <LinearLayout
             android:layout_below="@id/profile_image"
             android:layout_width="match_parent"
