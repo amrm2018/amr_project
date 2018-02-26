@@ -66,7 +66,6 @@ public class Login2_Activity extends AppCompatActivity {
         final String Log_in_email=Login_email.getText().toString().trim();
         final String Log_in_password=Login_password.getText().toString().trim();
 
-
         Response.Listener<String>responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -78,8 +77,7 @@ public class Login2_Activity extends AppCompatActivity {
                     if (success){
                         Toast.makeText(Login2_Activity.this, "تم تسجيل الدخول", Toast.LENGTH_SHORT).show();
                         if (chk_remember.isChecked()) {
-                            getSharedPreferences("MyPref1", MODE_PRIVATE)
-                                    .edit().putString("email", Log_in_email).putString("password", Log_in_password).apply();
+                            getSharedPreferences("MyPref1",MODE_PRIVATE).edit().putString("email", Log_in_email).putString("password", Log_in_password).apply();
                             // OR
 //                                        SharedPreferences shrd =  getSharedPreferences("MyPref", Context.MODE_PRIVATE);
 //                                        SharedPreferences.Editor editor= shrd.edit();

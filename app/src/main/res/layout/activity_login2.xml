@@ -28,7 +28,6 @@
                 android:src="@drawable/logo_pro"
                 android:background="@color/colorbluedark"/>
 
-
                     <EditText
                         android:id="@+id/ed_email_log2"
                         android:layout_width="match_parent"
@@ -43,8 +42,8 @@
                         android:layout_marginRight="10dp"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:drawableLeft="@drawable/ic_email_black"/>
@@ -63,8 +62,8 @@
                         android:hint="الرقم السري"
                         android:inputType="textPassword"
                         android:gravity="right|center_vertical"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:drawableLeft="@drawable/ic_lock_black"/>
@@ -80,7 +79,7 @@
                         android:layout_marginTop="10dp"
                         android:textStyle="bold"
                         android:textSize="14dp"
-                        android:textColor="@color/color3"/>
+                        android:textColor="@color/colorBlack"/>
 
                     <CheckBox
                         android:id="@+id/chk_remember"
@@ -90,7 +89,7 @@
                         android:layout_below="@+id/ed_pass_log2"
                         android:layout_toStartOf="@id/rem"
                         android:layout_marginRight="13dp"
-                        android:shadowColor="@color/color2"
+                        android:shadowColor="@color/colorBlack"
                         android:checked="true" />
 
                     <Button
@@ -103,23 +102,23 @@
                         android:layout_below="@id/rem"
                         android:background="@drawable/styel_btn_login"
                         android:text="دخول"
-                        android:textColor="#bdf3bb72"
+                        android:textColor="@color/colorBlack"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
 
-                    <Button
-                        android:id="@+id/btn_go_register"
-                        android:onClick="btn_go_Register2"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/btn_login2"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:background="@drawable/styel_btn_register"
-                        android:text="أشتراك جديد"
-                        android:textColor="#f7ad5678"
-                        android:textSize="15sp" />
+            <Button
+                android:id="@+id/btn_go_register"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/btn_login2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/styel_btn_register"
+                android:onClick="btn_go_Register2"
+                android:text="أشتراك جديد"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp" />
 
                 </RelativeLayout>
 
