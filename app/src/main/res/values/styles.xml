@@ -33,7 +33,7 @@
         <!-- This is the color of the Toolbar -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- This is the color of the Status bar -->
-        <item name="colorPrimaryDark">@color/colorbluedark</item>
+        <item name="colorPrimaryDark">@color/color9</item>
         <item name="colorAccent">@color/color7</item>
     </style>
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="atfalna.atfalna.Login_Register_Java.Registration2_Activity"
-    android:background="@color/colorGrey500"
+    android:background="@color/color9"
     android:padding="10dp">
 
     <TextView
@@ -17,9 +17,9 @@
         android:text="تسجيل حساب جديد"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textColor="#fff"
-        android:padding="5dp"/>
+        android:padding="2dp"/>
 
     <ImageView
         android:layout_width="25dp"
@@ -63,8 +63,8 @@
                         android:paddingRight="10dp"
                         android:background="@drawable/style_ed_login"
                         android:hint="الاسم"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         android:inputType="text"
                         android:gravity="right|center_vertical"/>
 
@@ -79,8 +79,8 @@
                         android:paddingRight="10dp"
                         android:background="@drawable/style_ed_login"
                         android:hint="البريد الالكترونى"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         android:inputType="textWebEmailAddress"
                         android:gravity="right|center_vertical"/>
 
@@ -95,8 +95,8 @@
                         android:hint="الرقم السري"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
 
                         android:inputType="textPassword"
                         android:gravity="right|center_vertical"/>
@@ -112,8 +112,8 @@
                         android:hint="اعادة الرقم السري"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         android:inputType="textPassword"
                         android:gravity="right|center_vertical"/>
 
@@ -130,8 +130,8 @@
                         android:inputType="number"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:textColor="@color/color6"
-                        android:textColorHint="@color/color6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/colorBlack"
                         />
 
                     <RadioGroup
@@ -146,7 +146,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/rdo_male"
                             android:text="ذكر"
-                            android:textColor="@color/color6"
+                            android:textColor="@color/colorBlack"
                             android:textSize="16sp"
                             android:checked="true"/>
 
@@ -156,7 +156,7 @@
                             android:id="@+id/rdo_female"
                             android:text="أنثي"
                             android:layout_marginLeft="5dp"
-                            android:textColor="@color/color6"
+                            android:textColor="@color/colorBlack"
                             android:textSize="16sp" />
 
                     </RadioGroup>
@@ -171,8 +171,8 @@
                         android:layout_marginRight="20dp"
                         android:background="@drawable/styel_btn_login"
                         android:text="تسجيل الحساب"
-                        android:textColor="#bdf3bb72"
-                        android:textSize="18sp" />
+                        android:textColor="#000"
+                        android:textSize="17sp" />
 
                     <Button
                         android:id="@+id/btn_go_register"
@@ -185,7 +185,7 @@
                         android:onClick="btn_go_login2"
                         android:text="لديك حساب بالفعل ؟ تسجيل دخول"
                         android:textColor="#f70b0b0b"
-                        android:textSize="18sp"/>
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
 

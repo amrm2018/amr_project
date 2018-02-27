@@ -51,7 +51,6 @@ public class Login2_Activity extends AppCompatActivity {
                 Login_btn_Login(view);
             }
         });
-
     }
 
     public void btn_go_Register2(View view) {
