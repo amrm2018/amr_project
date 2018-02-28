@@ -1,10 +1,13 @@
 package atfalna.atfalna.Create_Post_Java;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -20,6 +23,8 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 
 import atfalna.atfalna.Create_Post_Java.Send_Data_Post_Found;
 import atfalna.atfalna.GloablV;
@@ -37,13 +42,14 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
     GloablV gloablV;
 
+    // send image
     ImageView imgV ;
+    String encodeimg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post_found);
-
-        imgV=findViewById(R.id.img_post_found);
 
         ED_day=findViewById(R.id.ed_day);
         ED_year=findViewById(R.id.ed_year);
@@ -86,12 +92,25 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         TV_show_email_user=findViewById(R.id.tv_show_email_user);
         TV_show_email_user.setText(gloablV.getEmail_user());
 
+        //-- send image
+        imgV=findViewById(R.id.img_post_found);
+
+
+
+
     }
     public void back_finish(View view) {
         finish();
     }
 
     public void btn_create_post_found(View view) {
+
+        Bitmap Bimg=((BitmapDrawable)imgV.getDrawable()).getBitmap();
+        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+        Bimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        encodeimg= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
+       // encodeimg  هو دا المتغير اللي شايل الصورة
+        // encodeimg this is a variable set the image
 
         String City = TV_show_City.getText().toString();
         String Day = ED_day.getText().toString().trim();
@@ -123,7 +142,7 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
                 }
             }
         };
-        Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
+        Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(encodeimg,City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(send_Data_found);
     }
