@@ -1,4 +1,4 @@
-package atfalna.atfalna;
+package atfalna.atfalna.Create_Post_Java;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +12,20 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import atfalna.atfalna.Create_Post_Java.Send_Data_Post_Found;
+import atfalna.atfalna.GloablV;
+import atfalna.atfalna.Login_Register_Java.Registration2_Activity;
+import atfalna.atfalna.Login_Register_Java.Send_Data_Registration;
+import atfalna.atfalna.R;
 
 public class Create_Post_Found_Activity extends AppCompatActivity {
 
@@ -79,7 +93,41 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
     public void btn_create_post_found(View view) {
 
+        String City = TV_show_City.getText().toString();
+        String Day = ED_day.getText().toString().trim();
+        String Month = TV_show_month.getText().toString();
+        String Year = ED_year.getText().toString().trim();
+        String Gender_thecase;
+        if (RD_male.isChecked()){
+            Gender_thecase="ذكر";
+        }else
+            Gender_thecase="أنثى";
+        String Phone = ED_phone.getText().toString().trim();
+        String Place = ED_place_the_case.getText().toString();
+        String Info = ED_info_the_case.getText().toString();
+        String Email_Us = TV_show_email_user.getText().toString().trim();
+
+        Response.Listener<String> responseLisener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if (success) {
+                        Toast.makeText( getApplicationContext() , "تم نشر الحالة ِشكرا لك", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText( getApplicationContext() , "يوجد خطأ ( تاكد من البيانات المدخلة)", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(send_Data_found);
     }
+
 
     public  void btn_pick_photo (View view){
         Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="atfalna.atfalna.Create_Post_Found_Activity">
+    tools:context="atfalna.atfalna.Create_Post_Java.Create_Post_Found_Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -250,8 +250,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:layout_marginTop="2dp"
-                    android:gravity="right"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="right|center_vertical">
 
                     <RadioButton
                         android:id="@+id/rdo_male"
@@ -261,8 +261,7 @@
                         android:checked="true"
                         android:text="ذكر"
                         android:textColor="#000"
-                        android:textSize="15sp"
-                         />
+                        android:textSize="15sp" />
 
                     <RadioButton
                         android:id="@+id/rdo_female"
@@ -312,6 +311,8 @@
                     android:id="@+id/tv_show_spinner_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:visibility="invisible"
                     android:text=""/>
 
@@ -319,6 +320,8 @@
                     android:id="@+id/tv_show_spinner_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:visibility="invisible"
                     android:text=""/>
 
@@ -326,6 +329,8 @@
                     android:id="@+id/tv_show_email_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
                     android:visibility="invisible"
                     android:text=""/>
             </LinearLayout>
