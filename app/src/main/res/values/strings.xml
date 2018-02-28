@@ -2,7 +2,7 @@
     <string name="app_name">Atfalna</string>
 
 
-    <string-array name="spinner_dey">
+    <string-array name="spinner_month">
         <item> يناير  1</item>
         <item> فبراير  2</item>
         <item> مارس  3</item>

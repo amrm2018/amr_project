@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import atfalna.atfalna.GloablV;
 import atfalna.atfalna.Home2_Activity;
 import atfalna.atfalna.R;
 
@@ -27,16 +28,20 @@ public class Login2_Activity extends AppCompatActivity {
     EditText Login_email , Login_password ;
     CheckBox chk_remember;
 
+    GloablV gloablV ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+
+        gloablV = (GloablV) getApplicationContext();
 
         SharedPreferences pref = getSharedPreferences("MyPref1",MODE_PRIVATE);
         String email = pref.getString("email",null);
         String password = pref.getString("password",null);
         if (email !=null && password!=null)
         {
+            gloablV.setEmail_user(email);
             startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
         }
         chk_remember=findViewById(R.id.chk_remember);
@@ -75,8 +80,10 @@ public class Login2_Activity extends AppCompatActivity {
                     boolean success = jsonObject.getBoolean("success");
                     if (success){
                         Toast.makeText(Login2_Activity.this, "تم تسجيل الدخول", Toast.LENGTH_SHORT).show();
+                       gloablV.setEmail_user(Log_in_email);
                         if (chk_remember.isChecked()) {
                             getSharedPreferences("MyPref1",MODE_PRIVATE).edit().putString("email", Log_in_email).putString("password", Log_in_password).apply();
+
                             // OR
 //                                        SharedPreferences shrd =  getSharedPreferences("MyPref", Context.MODE_PRIVATE);
 //                                        SharedPreferences.Editor editor= shrd.edit();
