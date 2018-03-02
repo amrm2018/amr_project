@@ -62,17 +62,20 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
         SP_month=findViewById(R.id.spinner_month);
         SP_city=findViewById(R.id.sp_city);
+
         TV_show_month=findViewById(R.id.tv_show_spinner_month);
         TV_show_City=findViewById(R.id.tv_show_spinner_city);
 
         SP_month.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 String selectspinnerMonth =adapterView.getItemAtPosition(i).toString();
                 TV_show_month.setText(selectspinnerMonth);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });//--------SP_month
 
@@ -95,9 +98,6 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         //-- send image
         imgV=findViewById(R.id.img_post_found);
 
-
-
-
     }
     public void back_finish(View view) {
         finish();
@@ -105,6 +105,8 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
     public void btn_create_post_found(View view) {
 
+
+        // image
         Bitmap Bimg=((BitmapDrawable)imgV.getDrawable()).getBitmap();
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         Bimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
@@ -147,12 +149,10 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         queue.add(send_Data_found);
     }
 
-
     public  void btn_pick_photo (View view){
         Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent,100);
     }
-
 
     @Override
     protected void onActivityResult(int requestCode,int resultCode , Intent data){

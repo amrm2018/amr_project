@@ -14,13 +14,14 @@
         android:background="@color/colorLightBlue" >
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="20dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:id="@+id/img_back"
             android:onClick="back_finish"
-            android:src="@drawable/right_arrow"
+            android:src="@drawable/back_right1"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
             />
 
         <TextView
@@ -33,6 +34,7 @@
             android:textColor="#fff"
             android:textStyle="bold"
             android:layout_toLeftOf="@id/img_back"
+            android:layout_marginRight="3dp"
             android:layout_centerVertical="true"/>
 
         <TextView
@@ -106,6 +108,7 @@
                     android:layout_weight="4"
                     android:id="@+id/ed_year"
                     android:hint="السنة"
+                    android:maxLength="4"
                     android:textColorHint="#000"
                     android:textColor="#000"
                     android:layout_marginRight="10dp"
@@ -131,6 +134,7 @@
                     android:layout_weight="2"
                     android:id="@+id/ed_day"
                     android:hint="يوم"
+                    android:maxLength="2"
                     android:textColorHint="#000"
                     android:textColor="#000"
                     android:layout_marginRight="10dp"
@@ -181,7 +185,7 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="75dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/ed_place_the_case"
                     android:hint="مكان الحالة بالتفصيل  : "
                     android:paddingRight="5dp"
@@ -206,6 +210,7 @@
                     android:id="@+id/ed_info_the_case"
                     android:hint="أكتب المعلومات اللى تعرفها عن الحالة
                         ( لابس اية - الهيئة - بيعمل اية )"
+
                     android:paddingRight="5dp"
                     android:textColorHint="#000"
                     android:textColor="@color/colorBlack"
@@ -230,6 +235,7 @@
                     android:textColor="@color/colorBlack"
                     android:textColorHint="#000"
                     android:inputType="phone"
+                    android:maxLength="11"
                     android:paddingRight="5dp"
                     android:gravity="right|center_vertical"/>
 

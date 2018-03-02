@@ -46,7 +46,7 @@ public class Registration2_Activity extends AppCompatActivity {
     //Send_Data_to_Serveries
     public void btn_Reg(View view) {
 
-        String Ename = name.getText().toString().trim();
+        String Ename = name.getText().toString();
         String Email = email.getText().toString().trim();
         String Pass = password1.getText().toString().trim();
         String Pass2 = password2.getText().toString().trim();

@@ -22,6 +22,7 @@ import org.json.JSONObject;
 import atfalna.atfalna.GloablV;
 import atfalna.atfalna.Home2_Activity;
 import atfalna.atfalna.R;
+import atfalna.atfalna.Send_Data_get_iduser;
 
 public class Login2_Activity extends AppCompatActivity {
 
@@ -56,6 +57,7 @@ public class Login2_Activity extends AppCompatActivity {
                 Login_btn_Login(view);
             }
         });
+
     }
 
     public void btn_go_Register2(View view) {

@@ -97,7 +97,6 @@
                         android:paddingRight="10dp"
                         android:textColor="@color/colorBlack"
                         android:textColorHint="@color/colorBlack"
-
                         android:inputType="textPassword"
                         android:gravity="right|center_vertical"/>
 
@@ -127,6 +126,7 @@
                         android:background="@drawable/style_ed_login"
                         android:gravity="right|center_vertical"
                         android:hint="رقم الهاتف"
+                        android:maxLength="11"
                         android:inputType="number"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
