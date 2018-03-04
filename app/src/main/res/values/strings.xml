@@ -3,18 +3,18 @@
 
 
     <string-array name="spinner_month">
-        <item> يناير  1</item>
-        <item> فبراير  2</item>
-        <item> مارس  3</item>
-        <item> ابريل  4</item>
-        <item> مايو  5</item>
-        <item> يونيو  6</item>
-        <item> يوليو  7</item>
-        <item> أغسطس  8</item>
-        <item> ستمبر  9</item>
-        <item> أكتوبر  10</item>
-        <item> نوفبمر 11</item>
-        <item> ديسمبر  12</item>
+        <item>يناير</item>
+        <item>فبراير</item>
+        <item>مارس</item>
+        <item>ابريل</item>
+        <item>مايو</item>
+        <item> يونيو</item>
+        <item> يوليو</item>
+        <item>أغسطس</item>
+        <item>ستمبر</item>
+        <item>أكتوبر</item>
+        <item>نوفبمر</item>
+        <item>ديسمبر</item>
 
     </string-array>
 
@@ -49,6 +49,20 @@
         <item>جنوب شيناء</item>
 
     </string-array>
+
+
+    <string-array name="spinner_color_eye">
+        <item>اسود</item> <item>اخضر</item>  <item>بنى</item>  <item>ازرق</item>
+    </string-array>
+
+    <string-array name="spinner_color_hair">
+        <item>اسود</item> <item>اصفر</item>  <item>بنى</item>  <item>ابيض</item>
+    </string-array>
+
+    <string-array name="spinner_color_body">
+        <item>اسود</item> <item>قمحى</item>  <item>ابيض</item>
+    </string-array>
+
 
 
 </resources>

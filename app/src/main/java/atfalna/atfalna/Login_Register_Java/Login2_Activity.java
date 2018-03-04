@@ -1,5 +1,7 @@
 package atfalna.atfalna.Login_Register_Java;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -22,12 +22,13 @@ import org.json.JSONObject;
 import atfalna.atfalna.GloablV;
 import atfalna.atfalna.Home2_Activity;
 import atfalna.atfalna.R;
-import atfalna.atfalna.Send_Data_get_iduser;
 
 public class Login2_Activity extends AppCompatActivity {
 
     EditText Login_email , Login_password ;
     CheckBox chk_remember;
+
+
 
     GloablV gloablV ;
     @Override
@@ -66,8 +67,16 @@ public class Login2_Activity extends AppCompatActivity {
     public void btn_go_Home2(View view) {
         startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
     }
+
+
+
+    ProgressDialog dialog;
     //Login
     public void Login_btn_Login (View v){
+
+        dialog =new ProgressDialog(Login2_Activity.this);
+        dialog.show();
+        dialog.setMessage(" لحظة");
 
         final String Log_in_email=Login_email.getText().toString().trim();
         final String Log_in_password=Login_password.getText().toString().trim();
@@ -82,7 +91,7 @@ public class Login2_Activity extends AppCompatActivity {
                     boolean success = jsonObject.getBoolean("success");
                     if (success){
                         Toast.makeText(Login2_Activity.this, "تم تسجيل الدخول", Toast.LENGTH_SHORT).show();
-                       gloablV.setEmail_user(Log_in_email);
+                        gloablV.setEmail_user(Log_in_email);
                         if (chk_remember.isChecked()) {
                             getSharedPreferences("MyPref1",MODE_PRIVATE).edit().putString("email", Log_in_email).putString("password", Log_in_password).apply();
 
@@ -93,8 +102,11 @@ public class Login2_Activity extends AppCompatActivity {
 //                                        editor.putString("password",Log_in_password);
 //                                        editor.apply();
                         }
+
+                        dialog.dismiss();
                         startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
                     }else {
+                        dialog.dismiss();
                         Toast.makeText(Login2_Activity.this, "البيانات غير صحيحة", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -102,12 +114,11 @@ public class Login2_Activity extends AppCompatActivity {
                 }
             }
         };
+
         Send_Data_Login send_data =new Send_Data_Login(Log_in_email,Log_in_password,responseListener);
         RequestQueue queue = Volley.newRequestQueue(Login2_Activity.this);
         queue.add(send_data);
 
+
     }
-
-
-
 }

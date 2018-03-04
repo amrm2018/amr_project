@@ -1,5 +1,6 @@
 package atfalna.atfalna.Create_Post_Java;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -103,16 +104,20 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         finish();
     }
 
+    ProgressDialog dialog;
+
     public void btn_create_post_found(View view) {
 
 
+        dialog=new ProgressDialog(this);
+        dialog.show();
+        dialog.setMessage("لحظة");
         // image
         Bitmap Bimg=((BitmapDrawable)imgV.getDrawable()).getBitmap();
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         Bimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
         encodeimg= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
        // encodeimg  هو دا المتغير اللي شايل الصورة
-        // encodeimg this is a variable set the image
 
         String City = TV_show_City.getText().toString();
         String Day = ED_day.getText().toString().trim();
@@ -136,17 +141,21 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     if (success) {
                         Toast.makeText( getApplicationContext() , "تم نشر الحالة ِشكرا لك", Toast.LENGTH_SHORT).show();
+                   dialog.dismiss();
                     } else {
                         Toast.makeText( getApplicationContext() , "يوجد خطأ ( تاكد من البيانات المدخلة)", Toast.LENGTH_SHORT).show();
+                   dialog.dismiss();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         };
+
         Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(encodeimg,City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(send_Data_found);
+
     }
 
     public  void btn_pick_photo (View view){

@@ -37,7 +37,8 @@
             android:name=".Create_Post_Java.Create_Post_Found_Activity"
             android:theme="@style/AppTheme_NoActionBar_Post_found" />
         <activity android:name=".Create_Post_Missing_Activity" />
-        <activity android:name=".Show_All_Found_Activity"></activity>
+        <activity android:name=".Show_All_Post_Found.Show_All_Found_Activity" />
+        <activity android:name=".Show_All_Post_Found.Post_Found_Activity"></activity>
     </application>
 
 </manifest>

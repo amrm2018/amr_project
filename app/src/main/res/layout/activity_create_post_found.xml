@@ -37,6 +37,7 @@
             android:layout_marginRight="3dp"
             android:layout_centerVertical="true"/>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +60,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -81,6 +84,16 @@
                 android:src="@drawable/opencamera_1"
                 app:civ_border_color="#5c66c7"
                 app:civ_border_width="2dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_toRightOf="@id/tv_title2"
+                android:layout_below="@id/btn_open_gallery"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/icon_ta3gwob"
+                android:layout_marginLeft="3dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,7 +188,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="85dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/lin_place"
                 android:layout_below="@id/lin_city"
                 android:layout_marginTop="2dp"
@@ -189,6 +202,7 @@
                     android:id="@+id/ed_place_the_case"
                     android:hint="مكان الحالة بالتفصيل  : "
                     android:paddingRight="5dp"
+                    android:lines="5"
                     android:textColorHint="#000"
                     android:textColor="#000"
                     android:gravity="right|center_vertical"/>
@@ -197,7 +211,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/lin_info"
                 android:layout_below="@id/lin_place"
                 android:layout_marginTop="2dp"
@@ -206,11 +220,12 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/ed_info_the_case"
                     android:hint="أكتب المعلومات اللى تعرفها عن الحالة
-                        ( لابس اية - الهيئة - بيعمل اية )"
+ ( لابس اية - الهيئة - بيعمل اية )"
 
+                    android:maxHeight="100dp"
                     android:paddingRight="5dp"
                     android:textColorHint="#000"
                     android:textColor="@color/colorBlack"

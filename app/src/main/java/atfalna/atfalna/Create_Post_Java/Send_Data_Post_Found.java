@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Send_Data_Post_Found extends StringRequest {
 
-    private static final String SEND_DATA_URL = "http://192.168.43.104/app_atfalna/test_create_post_found.php"; // "http://localhost/app_atf/register_db_atf.php"
+    private static final String SEND_DATA_URL = "http://192.168.1.3/app_atfalna/test_create_post_found.php"; // "http://localhost/app_atf/register_db_atf.php"
     private Map<String, String> MapData;
 
     public Send_Data_Post_Found(String simg,String scity, String sday, String smonth, String syear, String sgender, String sphone, String splace, String sinfo, String semail_us, Response.Listener<String> listener) {

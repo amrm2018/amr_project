@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Send_Data_Registration extends StringRequest {
 
-    private static final String SEND_DATA_URL = "http://192.168.43.104/app_atfalna/register_db_atf.php"; // "http://localhost/app_atf/register_db_atf.php"
+    private static final String SEND_DATA_URL = "http://192.168.1.3/app_atfalna/register_db_atf.php"; // "http://localhost/app_atf/register_db_atf.php"
     private Map<String, String> MapData;
 
     public Send_Data_Registration(String name, String email, String password,String gender, String phone, Response.Listener<String> listener) {

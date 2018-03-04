@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="atfalna.atfalna.Show_All_Post_Found.Post_Found_Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/code_p"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:text="email"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/city"
+                android:text="City"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="#354089"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:text="20/1/2018"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:id="@+id/img_p_f"
+            android:src="@drawable/images"
+            android:layout_below="@id/r1"
+            android:layout_marginTop="5dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2"
+            android:gravity="center_vertical"
+            android:layout_below="@id/img_p_f"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title1"
+                android:text="تاريخ رؤيت الحالة : "
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_day"
+                android:text="20"
+                android:layout_toLeftOf="@id/title1"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_month"
+                android:text="يناير"
+                android:layout_toLeftOf="@id/tv_day"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_year"
+                android:text="2018"
+                android:layout_toLeftOf="@id/tv_month"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                />
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3"
+            android:layout_below="@+id/r2"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/title2"
+                android:text="مكان رؤيت الحالة :  "
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/title2"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:maxLines="5"
+                android:id="@+id/tv_place"
+                android:text="موجود في ميدان الجيزة عن محل باتا"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+           />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4"
+            android:layout_below="@+id/r3"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:id="@+id/title3"
+                android:text="معلومات الحالة :  "/>
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/title3"
+                android:text="الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم "
+                android:maxLines="5"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5"
+            android:layout_below="@+id/r4"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:id="@+id/title4"
+                android:text="تليفون اللى شاف الحالة : "/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/title4"
+                android:text="01118502684"
+                android:maxLength="11"
+
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6"
+            android:layout_below="@+id/r5"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:id="@+id/title5"
+                android:text="نوع الحالة :  "/>
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/title5"
+                android:text="ذكر"
+                android:maxLength="4"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7"
+            android:layout_below="@+id/r6"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="متضامن مع الحالة"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تعليق"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مشاركة"/>
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/r5"
+            android:layout_marginTop="10dp">
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
