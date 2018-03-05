@@ -36,4 +36,8 @@ public class Home2_Activity extends AppCompatActivity {
     public void Go_activity_show_all_found(View view) {
         startActivity(new Intent(getApplicationContext(),Show_All_Found_Activity.class));
     }
+
+    public void Go_activity_create_post_m(View view) {
+        startActivity(new Intent(getApplicationContext(),Create_Post_Missing_Activity.class));
+    }
 }

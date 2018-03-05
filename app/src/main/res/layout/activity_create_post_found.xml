@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:id="@+id/img_back"
+            android:id="@+id/img_back_m"
             android:onClick="back_finish"
             android:src="@drawable/back_right1"
             android:layout_alignParentRight="true"
@@ -33,7 +33,7 @@
             android:textSize="18sp"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:layout_toLeftOf="@id/img_back"
+            android:layout_toLeftOf="@id/img_back_m"
             android:layout_marginRight="3dp"
             android:layout_centerVertical="true"/>
 
@@ -88,7 +88,7 @@
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:layout_toRightOf="@id/tv_title2"
+                android:layout_toRightOf="@id/tv_title_date"
                 android:layout_below="@id/btn_open_gallery"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/icon_ta3gwob"
@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_title2"
+                android:id="@+id/tv_title_date"
                 android:layout_below="@id/btn_open_gallery"
                 android:layout_marginTop="5dp"
                 android:text="أكتب التاريخ اللى شوفت فيه الحالة"
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/lin_date"
-                android:layout_below="@id/tv_title2"
+                android:layout_below="@id/tv_title_date"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="3dp"
                 android:paddingRight="5dp"
@@ -309,7 +309,7 @@
             <Button
                 android:layout_width="150dp"
                 android:layout_height="35dp"
-                android:id="@+id/btn_create_post_found"
+                android:id="@+id/btn_create_post_missing"
                 android:layout_below="@id/lin_gender"
                 android:onClick="btn_create_post_found"
                 android:layout_marginTop="10dp"
@@ -325,7 +325,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/lin_text"
-                android:layout_below="@id/btn_create_post_found"
+                android:layout_below="@id/btn_create_post_missing"
                 android:orientation="horizontal">
 
                 <TextView

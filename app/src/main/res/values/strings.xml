@@ -51,6 +51,7 @@
     </string-array>
 
 
+
     <string-array name="spinner_color_eye">
         <item>اسود</item> <item>اخضر</item>  <item>بنى</item>  <item>ازرق</item>
     </string-array>
@@ -63,6 +64,16 @@
         <item>اسود</item> <item>قمحى</item>  <item>ابيض</item>
     </string-array>
 
+    <string-array name="spinner_hength">// الطول - كل 25 سم
+        <item>25-50</item>  <item>51-75</item>  <item>76-100</item>  <item>101-125</item>
+        <item>126-150</item>  <item>151-175</item>  <item>176-200</item>  <item>201-225</item>
+    </string-array>
+
+    <string-array name="spinner_wiegth">// الوزن - كل 10  كليو
+        <item>10-25</item> <item>26-40</item>  <item>41-60</item>
+        <item>61-75</item> <item>76-90</item>  <item>91-105</item>
+        <item>106-120</item> <item>121-200</item>
+    </string-array>
 
 
 </resources>
