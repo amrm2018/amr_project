@@ -131,7 +131,9 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="5dp"
                     android:entries="@array/spinner_month"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    
+                    />
 
                 <EditText
                     android:layout_width="60dp"

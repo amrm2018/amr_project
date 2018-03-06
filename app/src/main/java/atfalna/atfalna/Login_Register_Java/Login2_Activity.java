@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import atfalna.atfalna.GloablV;
 import atfalna.atfalna.Home2_Activity;
+import atfalna.atfalna.MainActivity;
 import atfalna.atfalna.R;
 
 public class Login2_Activity extends AppCompatActivity {
@@ -120,5 +121,10 @@ public class Login2_Activity extends AppCompatActivity {
         queue.add(send_data);
 
 
+    }
+
+    public void go_main(View view) {
+
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 }

@@ -32,8 +32,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="108dp"
             android:orientation="vertical"
-            android:padding="10dp"
-            >
+            android:padding="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -71,7 +70,7 @@
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_next_right2" />
 
-             </RelativeLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -98,6 +97,7 @@
                     android:textColor="#000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
                 <ImageView
                     android:id="@+id/imgL2"
                     android:layout_width="25dp"
@@ -145,7 +145,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_next_right2" />
-
 
             </RelativeLayout>
 

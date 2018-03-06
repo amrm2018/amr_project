@@ -9,6 +9,7 @@
 
 
     <ImageView
+        android:onClick="go_main"
         android:id="@+id/img_1"
         android:layout_width="160dp"
         android:layout_height="160dp"

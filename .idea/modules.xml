@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://D:\projectatfalna\aapro\atfalna_pro\amr_project.iml" filepath="D:\projectatfalna\aapro\atfalna_pro\amr_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\projectatfalna\aapro\atfalna_pro\app\app.iml" filepath="D:\projectatfalna\aapro\atfalna_pro\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/atfalna_pro.iml" filepath="$PROJECT_DIR$/atfalna_pro.iml" />
     </modules>
   </component>
