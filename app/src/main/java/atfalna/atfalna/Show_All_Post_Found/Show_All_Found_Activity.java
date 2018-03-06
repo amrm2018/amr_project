@@ -142,7 +142,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
             datetime.setText(listA.get(i).date_time_p);
            // phone.setText(listA.get(i).phone);
 
-            Picasso.with(getApplicationContext()).load("http://192.168.1.3/app_atfalna/img_atfalna/"+listA.get(i).img_f).into(imgfound);
+            Picasso.with(getApplicationContext()).load("http://192.168.1.3/app_atfalna/img_found/"+listA.get(i).img_f).into(imgfound);
 
             imgfound.setOnClickListener(new View.OnClickListener() {
                 @Override
