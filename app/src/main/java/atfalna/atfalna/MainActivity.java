@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import atfalna.atfalna.Create_Post_Java.Create_Post_Found_Activity;
+import atfalna.atfalna.Create_Post_Java.Create_Post_Missing_Activity;
 import atfalna.atfalna.Login_Register_Java.Login2_Activity;
 import atfalna.atfalna.Show_All_Post_Found.Show_All_Found_Activity;
 

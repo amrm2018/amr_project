@@ -19,7 +19,7 @@
         <item name="colorAccent">@color/color2</item>
     </style>
 
-    <style name="AppTheme_NoActionBar_Post_found" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme_NoActionBar_create_Post" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- This is the color of the Toolbar -->
         <item name="colorPrimary">@color/colorPrimary</item>
