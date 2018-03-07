@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.w3c.dom.Text;
 
 import atfalna.atfalna.R;
@@ -52,11 +54,14 @@ public class Post_Found_Activity extends AppCompatActivity {
         tv_place.setText(data_p_f.getExtras().getString("text_place"));
         tv_info.setText(data_p_f.getExtras().getString("text_info").trim());
 
-
-//        String img = data_p_f.getExtras().getString("text_img");
+        String simg = data_p_f.getExtras().getString("text_img");
 //        Uri uri =Uri.parse(img);
-//
 //        img_p.setImageURI(uri);
+
+        Picasso.with(getApplicationContext())
+                .load("http://192.168.1.4/app_atfalna/img_found/"+simg)
+                .into(img_p);
+
 
 
 
