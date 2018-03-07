@@ -18,7 +18,7 @@ public class Post_Found_Activity extends AppCompatActivity {
     TextView tv_code_p, tv_email_user, tv_datetime, tv_city,
             tv_day, tv_month, tv_year,
             tv_gender, tv_phone,tv_place, tv_info ;
-    ImageView img_p ;
+    ImageView img_p_f ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class Post_Found_Activity extends AppCompatActivity {
         tv_place=findViewById(R.id.tv_place);
         tv_info=findViewById(R.id.tv_info);
 
-        img_p = findViewById(R.id.img_p_f);
+        img_p_f = findViewById(R.id.img_p_f);
 
         Intent data_p_f = getIntent();
 
@@ -59,8 +59,8 @@ public class Post_Found_Activity extends AppCompatActivity {
 //        img_p.setImageURI(uri);
 
         Picasso.with(getApplicationContext())
-                .load("http://192.168.1.4/app_atfalna/img_found/"+simg)
-                .into(img_p);
+                .load("http://192.168.1.5/app_atfalna/img_found/"+simg)
+                .into(img_p_f);
 
 
 

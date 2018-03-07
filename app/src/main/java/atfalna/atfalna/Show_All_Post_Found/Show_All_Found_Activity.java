@@ -33,7 +33,7 @@ import atfalna.atfalna.R;
 public class Show_All_Found_Activity extends AppCompatActivity {
 
     RequestQueue requestQueue;
-    String url="http://192.168.1.4/app_atfalna/show_all_found_db_atf.php";
+    String url="http://192.168.1.5/app_atfalna/show_all_found_db_atf.php";
     ArrayList<listitme> listMovis= new ArrayList<listitme>();
     ListView listView ;
     TextView text_total , text_email_user ;
@@ -61,7 +61,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
                         try {
                             JSONArray jsonArray = response.getJSONArray("allpost_found");
                             text_total.setText("الحالات التى تم رؤيتها: " + jsonArray.length());
-                            for (int i = 0; i < jsonArray.length(); i++) {
+                            for (int i = 0 ; i < jsonArray.length(); i++) {
                                 JSONObject res = jsonArray.getJSONObject(i);
 
                                 String code_post_found = res.getString("code_post");
@@ -125,7 +125,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
         @Override
         public View getView(final int i, View view, ViewGroup viewGroup) {
 
-            LayoutInflater layoutInflater=getLayoutInflater();
+                       LayoutInflater layoutInflater=getLayoutInflater();
             View v1 =layoutInflater.inflate(R.layout.row_itme_fonud,null);
 
             TextView code_p =v1.findViewById(R.id.tv_code_post_f_list);
@@ -140,9 +140,9 @@ public class Show_All_Found_Activity extends AppCompatActivity {
             email_user.setText(listA.get(i).email_user_f);
             city.setText(listA.get(i).city_f);
             datetime.setText(listA.get(i).date_time_p);
-           // phone.setText(listA.get(i).phone);
+            // phone.setText(listA.get(i).phone);
 
-            Picasso.with(getApplicationContext()).load("http://192.168.1.4/app_atfalna/img_found/"+listA.get(i).img_f).into(imgfound);
+            Picasso.with(getApplicationContext()).load("http://192.168.1.5/app_atfalna/img_found/"+listA.get(i).img_f).into(imgfound);
 
             imgfound.setOnClickListener(new View.OnClickListener() {
                 @Override

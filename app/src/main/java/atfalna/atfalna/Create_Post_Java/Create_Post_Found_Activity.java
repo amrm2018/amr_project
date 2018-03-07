@@ -115,7 +115,7 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         // image
         Bitmap Bimg=((BitmapDrawable)imgV.getDrawable()).getBitmap();
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-        Bimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        Bimg.compress(Bitmap.CompressFormat.JPEG,80,byteArrayOutputStream);
         encodeimg= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
        // encodeimg  هو دا المتغير اللي شايل الصورة
 
@@ -152,7 +152,8 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
             }
         };
 
-        Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(encodeimg,City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
+        Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(
+                encodeimg,City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(send_Data_found);
 

@@ -66,12 +66,14 @@
             <ImageView
                 android:id="@+id/img_post_missing"
                 android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_height="180dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/image_parson" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btn_open_gallery_m"
+                android:onClick="btn_pick_photo_m"
                 android:layout_width="50dp"
                 android:layout_height="45dp"
                 android:layout_alignParentTop="true"
@@ -325,6 +327,7 @@
                 android:textColorHint="#000"
                 android:layout_alignParentRight="true"
                 android:inputType="number"
+                android:gravity="right|bottom"
                 />
 
             <EditText
@@ -440,15 +443,15 @@
                 android:layout_below="@+id/lin_gender"
                 android:hint="مبلغ المكافأة ...ان كنت تريد"
                 android:textColor="#000"
-                android:textColorHint="#000"/>
-
+                android:textColorHint="#000"
+                android:gravity="bottom|right"/>
 
             <Button
                 android:layout_width="150dp"
                 android:layout_height="35dp"
                 android:id="@+id/btn_create_post_missing"
+                android:onClick="btn_create_post_m"
                 android:layout_below="@id/ed_bouns_m"
-
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/styel_btn_create_post"
