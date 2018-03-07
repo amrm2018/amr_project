@@ -196,7 +196,8 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/logo_atfalna"
             app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="2dp"
+            android:onClick="go_main_activity"/>
 
         <TextView
             android:id="@+id/tv_show_id"
