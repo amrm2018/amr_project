@@ -10,6 +10,8 @@ import android.app.Application;
 public class GloablV extends Application {
 
     private String email_user ;
+    private String user_id ;
+
 
     public String getEmail_user() {
         return email_user;

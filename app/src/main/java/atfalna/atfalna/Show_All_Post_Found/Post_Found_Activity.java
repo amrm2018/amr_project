@@ -1,15 +1,15 @@
 package atfalna.atfalna.Show_All_Post_Found;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import atfalna.atfalna.R;
 
@@ -20,22 +20,26 @@ public class Post_Found_Activity extends AppCompatActivity {
             tv_gender, tv_phone,tv_place, tv_info ;
     ImageView img_p_f ;
 
+    RelativeLayout rel_comm_p_f ;
+
+    ListView list_comm_p_f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_found);
 
         tv_code_p=findViewById(R.id.code_p);
-        tv_email_user=findViewById(R.id.email);
-        tv_datetime=findViewById(R.id.date);
-        tv_city=findViewById(R.id.city);
-        tv_day=findViewById(R.id.tv_day);
-        tv_month=findViewById(R.id.tv_month);
-        tv_year=findViewById(R.id.tv_year);
-        tv_gender=findViewById(R.id.tv_gender);
-        tv_phone=findViewById(R.id.tv_phone);
-        tv_place=findViewById(R.id.tv_place);
-        tv_info=findViewById(R.id.tv_info);
+        tv_email_user=findViewById(R.id.tv_email_f);
+        tv_datetime=findViewById(R.id.tv_date_f);
+        tv_city=findViewById(R.id.tv_city_f);
+        tv_day=findViewById(R.id.tv_day_f);
+        tv_month=findViewById(R.id.tv_month_f);
+        tv_year=findViewById(R.id.tv_year_f);
+        tv_gender=findViewById(R.id.tv_gender_f);
+        tv_phone=findViewById(R.id.tv_phone_f);
+        tv_place=findViewById(R.id.tv_place_f);
+        tv_info=findViewById(R.id.tv_info_f);
 
         img_p_f = findViewById(R.id.img_p_f);
 
@@ -43,7 +47,6 @@ public class Post_Found_Activity extends AppCompatActivity {
 
         tv_code_p.setText(data_p_f.getExtras().getString("text_code").trim());
         tv_email_user.setText(data_p_f.getExtras().getString("text_email").trim());
-        tv_code_p.setText(data_p_f.getExtras().getString("text_code").trim());
         tv_datetime.setText(data_p_f.getExtras().getString("text_date").trim());
         tv_city.setText(data_p_f.getExtras().getString("text_city").trim());
         tv_day.setText(data_p_f.getExtras().getString("text_day").trim());
@@ -59,19 +62,25 @@ public class Post_Found_Activity extends AppCompatActivity {
 //        img_p.setImageURI(uri);
 
         Picasso.with(getApplicationContext())
-                .load("http://192.168.1.5/app_atfalna/img_found/"+simg)
+                .load("http://192.168.1.3/app_atfalna/img_found/"+simg)
                 .into(img_p_f);
 
+        // Comment_p_f
+        rel_comm_p_f =findViewById(R.id.rel_comment_p_f);
 
-
-
-
-
-
-
-
-
-
+        //List
+        list_comm_p_f = findViewById(R.id.listview_show_all_comment_p_f);
 
     }
+    public  void btn_exit_comment_p_f (View view){
+        rel_comm_p_f.setVisibility(View.INVISIBLE);
+        list_comm_p_f.setVisibility(View.VISIBLE);
+    }
+
+    public  void btn_show_rel_comment_p_f (View view){
+        rel_comm_p_f.setVisibility(View.VISIBLE);
+        list_comm_p_f.setVisibility(View.INVISIBLE);
+    }
+
+
 }

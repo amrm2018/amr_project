@@ -7,12 +7,56 @@
     android:layout_height="match_parent"
     tools:context="atfalna.atfalna.Show_All_Post_Found.Post_Found_Activity">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo_atfalna"
+        android:id="@+id/img_logo_f"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/img_date_p_f"
+        android:src="@drawable/ic_calendar1"
+        android:layout_toLeftOf="@id/img_logo_f"
+        android:layout_below="@+id/tv_email_f"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="3dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/code_p"/>
+        android:id="@+id/tv_email_f"
+        android:text="email"
+        android:layout_toLeftOf="@id/img_logo_f"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:id="@+id/tv_date_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_email_f"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@id/img_date_p_f"
+        android:text="20/1/2018"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/code_p"
+        />
 
     <android.support.v4.widget.NestedScrollView
+        android:layout_below="@id/img_logo_f"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -23,74 +67,51 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/r1"
+            android:id="@+id/rel_data_f"
             android:gravity="center_vertical"
-            android:layout_marginTop="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/email"
-                android:text="email"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/city"
-                android:text="City"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textColor="#354089"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/date"
-                android:text="20/1/2018"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                />
-
-        </RelativeLayout>
+            android:layout_marginTop="5dp"
+           >
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="1dp"
             android:id="@+id/img_p_f"
-            android:src="@drawable/images"
-            android:layout_below="@id/r1"
-            android:layout_marginTop="5dp"
+            android:src="@drawable/image_parson"
+            android:layout_marginTop="2dp"
             />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/r2"
             android:gravity="center_vertical"
             android:layout_below="@id/img_p_f"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/style_rel_p_f">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/ic_date_f"
+                android:src="@drawable/ic_date"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/title1"
                 android:text="تاريخ رؤيت الحالة : "
-                android:layout_alignParentRight="true"
+                android:layout_toLeftOf="@id/ic_date_f"
                 android:layout_marginRight="5dp"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_day"
+                android:id="@+id/tv_day_f"
                 android:text="20"
                 android:layout_toLeftOf="@id/title1"
                 android:layout_marginRight="5dp"
@@ -101,113 +122,182 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_month"
+                android:id="@+id/tv_month_f"
                 android:text="يناير"
-                android:layout_toLeftOf="@id/tv_day"
+                android:layout_toLeftOf="@id/tv_day_f"
                 android:layout_marginRight="5dp"
                 android:textStyle="bold"
                 android:textColor="#000"
                 />
 
             <TextView
+                android:id="@+id/tv_year_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_year"
-                android:text="2018"
-                android:layout_toLeftOf="@id/tv_month"
                 android:layout_marginRight="5dp"
-                android:textStyle="bold"
+                android:layout_toLeftOf="@id/tv_month_f"
+                android:text="2018"
                 android:textColor="#000"
-                />
+                android:textStyle="bold" />
 
     </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/r3"
             android:layout_below="@+id/r2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/style_rel_p_f"
             android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_gender_f"
+                android:src="@drawable/ic_gender"
                 android:layout_alignParentRight="true"
-                android:id="@+id/title2"
-                android:text="مكان رؤيت الحالة :  "
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/title2"
+                android:layout_toLeftOf="@id/img_gender_f"
                 android:layout_marginRight="5dp"
                 android:layout_centerVertical="true"
-                android:gravity="center_vertical"
-                android:maxLines="5"
-                android:id="@+id/tv_place"
-                android:text="موجود في ميدان الجيزة عن محل باتا"
-                android:textColor="#000"
-                android:textStyle="bold"/>
-
-           />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/r4"
-            android:layout_below="@+id/r3"
-            android:layout_marginTop="10dp">
+                android:id="@+id/title5"
+                android:text="نوع الحالة :  "/>
 
             <TextView
+                android:id="@+id/tv_gender_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:id="@+id/title3"
-                android:text="معلومات الحالة :  "/>
-
-            <TextView
-                android:id="@+id/tv_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/title3"
-                android:text="الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم "
-                android:maxLines="5"
+                android:layout_toLeftOf="@+id/title5"
+                android:layout_centerVertical="true"
+                android:text="ذكر"
+                android:maxLength="4"
                 android:textStyle="bold"
                 android:textColor="#000"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_city"
+                android:src="@drawable/ic_map"
+                android:layout_toLeftOf="@id/tv_gender_f"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_title_city"
+                android:text="المحافظة : "
+                android:layout_toLeftOf="@id/img_city"
+                android:layout_marginRight="3dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_city_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@id/tv_title_city"
+                android:text="City"
+                android:textColor="#354089"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/r5"
-            android:layout_below="@+id/r4"
-            android:layout_marginTop="10dp">
+            android:layout_height="40dp"
+            android:id="@+id/r4"
+            android:layout_below="@+id/r3"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/style_rel_p_f">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:id="@+id/ic_map_f"
+                android:src="@drawable/ic_user_map"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"/>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/title2"
+                android:text="مكان رؤيت الحالة :  "
+                android:layout_toLeftOf="@id/ic_map_f"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_place_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@id/title2"
+                android:gravity="right"
+                android:maxLines="3"
+                android:text="موجود في ميدان الجيزة عن محل باتا"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/r5"
+            android:layout_below="@+id/r4"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/style_rel_p_f">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_phone_f"
+                android:src="@drawable/ic_phone"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/img_phone_f"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
                 android:id="@+id/title4"
                 android:text="تليفون اللى شاف الحالة : "/>
 
             <TextView
-                android:id="@+id/tv_phone"
+                android:id="@+id/tv_phone_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/title4"
-                android:text="01118502684"
                 android:maxLength="11"
-
-                android:textStyle="bold"
-                android:textColor="#000"/>
+                android:text="01118502684"
+                android:textColor="#000"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -216,25 +306,48 @@
             android:layout_height="wrap_content"
             android:id="@+id/r6"
             android:layout_below="@+id/r5"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/style_rel_p_f">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_info_f"
+                android:src="@drawable/ic_info"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:id="@+id/title5"
-                android:text="نوع الحالة :  "/>
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
 
             <TextView
-                android:id="@+id/tv_gender"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/img_info_f"
+                android:id="@+id/title3"
+                android:text="معلومات
+ الحالة :  "
+                android:layout_centerVertical="true"/>
+
+            <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/title5"
-                android:text="ذكر"
-                android:maxLength="4"
-                android:textStyle="bold"
-                android:textColor="#000"/>
+                android:layout_toLeftOf="@+id/title3">
+
+                    <TextView
+                        android:id="@+id/tv_info_f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center"
+                        android:maxLines="5"
+                        android:padding="2dp"
+                        android:text="الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم ...الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم ...الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم ....الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم ...الواد قاعد في الشارع و بشوف كتير جدا هناك تقربيا كل يوم  "
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+            </ScrollView>
 
         </RelativeLayout>
 
@@ -243,43 +356,154 @@
             android:layout_height="wrap_content"
             android:id="@+id/r7"
             android:layout_below="@+id/r6"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="10dp"
+            android:background="#dfecf2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="متضامن مع الحالة"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="تعليق"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="مشاركة"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_share2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مشاركة"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        />
 
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp"
+                    android:onClick="btn_show_rel_comment_p_f">
+
+                    <ImageView
+                        android:layout_width="51dp"
+                        android:layout_height="31dp"
+                        android:src="@drawable/ic_comment2"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تعليق"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="1dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_solidarity1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="متضامن"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        />
+                    
+                </LinearLayout>
+                
             </LinearLayout>
 
         </RelativeLayout>
 
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/r5"
-            android:layout_marginTop="10dp">
+            android:id="@+id/rel_show_comment_f"
+            android:layout_below="@id/rel_data_f"
+            android:layout_marginTop="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel_comment_p_f"
+                android:visibility="visible">
 
 
-        </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ed_comment_p_f"
+                    android:background="@drawable/style_rel_p_f"
+                    android:layout_marginRight="15sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:lines="3"
+                    android:gravity="right|top"
+                    android:paddingRight="3dp"
+                    android:paddingTop="3dp"
+                    android:hint="أضافة تعليق"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_comment_p_f"
+                    android:layout_below="@+id/ed_comment_p_f"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/style_rel_p_f"
+                    android:text="أرسال"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_exit_comment_p_f"
+                    android:layout_below="@id/ed_comment_p_f"
+                    android:layout_toLeftOf="@id/btn_comment_p_f"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#070e5b"
+                    android:textStyle="bold"
+                    android:text="إلغاء"
+                    android:onClick="btn_exit_comment_p_f"/>
+
+            </RelativeLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:id="@+id/listview_show_all_comment_p_f"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="#58dcebfd"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
