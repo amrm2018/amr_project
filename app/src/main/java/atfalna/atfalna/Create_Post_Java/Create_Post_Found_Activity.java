@@ -39,7 +39,7 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
     EditText ED_day,ED_year,ED_phone,ED_place_the_case , ED_info_the_case ;
     Spinner SP_month ,SP_city;
     RadioButton RD_male , RD_female ;
-    TextView TV_show_month , TV_show_City ,TV_show_email_user;
+    TextView TV_show_month , TV_show_City ,TV_show_email_user  , tv_show_user_name_f;
 
     GloablV gloablV;
 
@@ -95,6 +95,9 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         gloablV = (GloablV)getApplicationContext();
         TV_show_email_user=findViewById(R.id.tv_show_email_user);
         TV_show_email_user.setText(gloablV.getEmail_user());
+
+        tv_show_user_name_f=findViewById(R.id.tv_show_user_name_f);
+        tv_show_user_name_f.setText(gloablV.getUser_name());
 
         //-- send image
         imgV=findViewById(R.id.img_post_found);

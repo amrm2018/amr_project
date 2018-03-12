@@ -63,6 +63,7 @@
         <item>اصفر</item>
         <item>بنى</item>
         <item>ابيض</item>
+        <item>ابيض</item>
     </string-array>
 
     <string-array name="spinner_color_body">

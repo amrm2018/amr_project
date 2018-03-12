@@ -53,13 +53,9 @@ public class Registration2_Activity extends AppCompatActivity {
         String Phone = phone.getText().toString().trim();
         String Gender ;
         if (RD_male.isChecked()){
-            Gender="male";
-        }else Gender="female";
+              Gender="ذكر";
+        }else Gender="أنثي";
 
-        if (Ename.equals(""))
-        {
-
-        }
         if (!Pass.equals(Pass2)) {
             Toast.makeText(Registration2_Activity.this, "اكتب الرقم السري بشكل صحيح", Toast.LENGTH_LONG).show();
         }else{

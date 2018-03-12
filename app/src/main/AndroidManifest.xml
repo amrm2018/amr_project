@@ -22,9 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Home2_Activity"
-            android:theme="@style/AppTheme_NoActionBar_home" />
 
         <activity
             android:name=".Login_Register_Java.Login2_Activity"
@@ -51,7 +48,9 @@
             android:name=".Show_All_Post_Found.Post_Found_Activity"
             android:theme="@style/AppTheme_NoActionBar_create_Post"/>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_NoActionBar_create_Post"></activity>
 
     </application>
 

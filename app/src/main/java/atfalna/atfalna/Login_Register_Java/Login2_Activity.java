@@ -1,7 +1,6 @@
 package atfalna.atfalna.Login_Register_Java;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import atfalna.atfalna.GloablV;
-import atfalna.atfalna.Home2_Activity;
 import atfalna.atfalna.MainActivity;
 import atfalna.atfalna.R;
 
@@ -29,9 +27,8 @@ public class Login2_Activity extends AppCompatActivity {
     EditText Login_email , Login_password ;
     CheckBox chk_remember;
 
-
-
     GloablV gloablV ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +42,7 @@ public class Login2_Activity extends AppCompatActivity {
         if (email !=null && password!=null)
         {
             gloablV.setEmail_user(email);
-            startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
         chk_remember=findViewById(R.id.chk_remember);
 
@@ -61,15 +58,6 @@ public class Login2_Activity extends AppCompatActivity {
         });
 
     }
-
-    public void btn_go_Register2(View view) {
-        startActivity(new Intent(getApplicationContext(),Registration2_Activity.class));
-    }
-    public void btn_go_Home2(View view) {
-        startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
-    }
-
-
 
     ProgressDialog dialog;
     //Login
@@ -94,7 +82,10 @@ public class Login2_Activity extends AppCompatActivity {
                         Toast.makeText(Login2_Activity.this, "تم تسجيل الدخول", Toast.LENGTH_SHORT).show();
                         gloablV.setEmail_user(Log_in_email);
                         if (chk_remember.isChecked()) {
-                            getSharedPreferences("MyPref1",MODE_PRIVATE).edit().putString("email", Log_in_email).putString("password", Log_in_password).apply();
+                            getSharedPreferences("MyPref1",MODE_PRIVATE)
+                                    .edit().putString("email", Log_in_email)
+                                    .putString("password", Log_in_password)
+                                    .apply();
 
                             // OR
 //                                        SharedPreferences shrd =  getSharedPreferences("MyPref", Context.MODE_PRIVATE);
@@ -105,7 +96,7 @@ public class Login2_Activity extends AppCompatActivity {
                         }
 
                         dialog.dismiss();
-                        startActivity(new Intent(getApplicationContext(),Home2_Activity.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     }else {
                         dialog.dismiss();
                         Toast.makeText(Login2_Activity.this, "البيانات غير صحيحة", Toast.LENGTH_SHORT).show();
@@ -120,10 +111,13 @@ public class Login2_Activity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(Login2_Activity.this);
         queue.add(send_data);
 
-
     }
 
-    public void go_main(View view) {
+    public void btn_go_Register2(View view) {
+        startActivity(new Intent(getApplicationContext(),Registration2_Activity.class));
+    }
+
+   public void go_main(View view) {
 
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }

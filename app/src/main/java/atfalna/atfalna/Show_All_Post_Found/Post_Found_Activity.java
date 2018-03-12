@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -23,6 +24,8 @@ public class Post_Found_Activity extends AppCompatActivity {
     RelativeLayout rel_comm_p_f ;
 
     ListView list_comm_p_f;
+
+    EditText ed_comm_p_f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +65,7 @@ public class Post_Found_Activity extends AppCompatActivity {
 //        img_p.setImageURI(uri);
 
         Picasso.with(getApplicationContext())
-                .load("http://192.168.1.3/app_atfalna/img_found/"+simg)
+                .load("http://192.168.1.103/app_atfalna/img_found/"+simg)
                 .into(img_p_f);
 
         // Comment_p_f
@@ -71,7 +74,11 @@ public class Post_Found_Activity extends AppCompatActivity {
         //List
         list_comm_p_f = findViewById(R.id.listview_show_all_comment_p_f);
 
+        ed_comm_p_f =findViewById(R.id.ed_comment_p_f);
+        ed_comm_p_f.setSelected(false);
+
     }
+
     public  void btn_exit_comment_p_f (View view){
         rel_comm_p_f.setVisibility(View.INVISIBLE);
         list_comm_p_f.setVisibility(View.VISIBLE);

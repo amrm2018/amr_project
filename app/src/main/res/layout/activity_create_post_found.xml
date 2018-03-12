@@ -69,7 +69,8 @@
                 android:layout_marginTop="5dp"
                 android:id="@+id/img_post_found"
                 android:src="@drawable/image_parson"
-                android:scaleType="fitCenter"/>
+                android:scaleType="centerCrop"
+                />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btn_open_gallery"
@@ -104,6 +105,19 @@
                 android:text="أكتب التاريخ اللى شوفت فيه الحالة"
                 android:textColor="#4d8ecf"
                 android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_show_user_name_f"
+                android:layout_below="@id/btn_open_gallery"
+                android:layout_toLeftOf="@id/tv_title_date"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="#4d8ecf"
+                android:textStyle="bold"
+               />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -202,7 +216,7 @@
                     android:id="@+id/ed_place_the_case"
                     android:hint="مكان الحالة بالتفصيل  : "
                     android:paddingRight="5dp"
-                    android:lines="2"
+                    android:maxLines="2"
                     android:textColorHint="#000"
                     android:textColor="#000"
                     android:gravity="right|bottom"/>
@@ -224,7 +238,7 @@
                     android:id="@+id/ed_info_the_case"
                     android:hint="أكتب المعلومات اللى تعرفها عن الحالة
  ( لابس اية - الهيئة - بيعمل اية )"
-                    android:lines="3"
+                    android:maxLines="3"
                     android:paddingRight="5dp"
                     android:textColorHint="#000"
                     android:textColor="@color/colorBlack"
@@ -333,7 +347,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:visibility="invisible"
+
                     android:text=""/>
 
                 <TextView
@@ -342,7 +356,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:visibility="invisible"
+
                     android:text=""/>
 
                 <TextView
@@ -351,7 +365,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:visibility="invisible"
+
                     android:text=""/>
             </LinearLayout>
 

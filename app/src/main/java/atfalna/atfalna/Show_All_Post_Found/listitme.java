@@ -35,9 +35,4 @@ public class listitme {
         this.email_user_f = email_user_f;
     }
 
-
-
-
-
-
 }

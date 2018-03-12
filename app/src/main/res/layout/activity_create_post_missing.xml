@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="right|bottom"
                     android:hint="العنوان بالتفصيل  : "
-                    android:lines="2"
+                    android:maxLines="2"
                     android:paddingRight="5dp"
                     android:textColor="#000"
                     android:textColorHint="#000" />
@@ -380,7 +380,7 @@
                 android:id="@+id/ed_notes_m"
                 android:layout_below="@id/ed_phone_m"
                 android:hint="معلومات اضافية"
-                android:lines="3"
+                android:maxLines="3"
                 android:paddingRight="10dp"
                 android:textColorHint="#000"
                 android:textColor="@color/colorBlack"
@@ -441,7 +441,7 @@
                 android:layout_marginTop="3dp"
                 android:id="@+id/ed_bouns_m"
                 android:layout_below="@+id/lin_gender"
-                android:hint="مبلغ المكافأة ...ان كنت تريد"
+                android:hint="مبلغ المكافأة ...لو عايز"
                 android:textColor="#000"
                 android:textColorHint="#000"
                 android:gravity="bottom|right"/>

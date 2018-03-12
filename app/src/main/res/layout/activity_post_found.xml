@@ -74,7 +74,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="140dp"
             android:id="@+id/img_p_f"
             android:src="@drawable/image_parson"
             android:layout_marginTop="2dp"
@@ -251,7 +251,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_toLeftOf="@id/title2"
                 android:gravity="right"
-                android:maxLines="3"
+                android:maxLines="2"
                 android:text="موجود في ميدان الجيزة عن محل باتا"
                 android:textColor="#000"
                 android:textStyle="bold" />
@@ -357,7 +357,7 @@
             android:id="@+id/r7"
             android:layout_below="@+id/r6"
             android:layout_marginTop="10dp"
-            android:background="#dfecf2">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -394,7 +394,15 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="1dp"
-                    android:onClick="btn_show_rel_comment_p_f">
+                    android:onClick="btn_show_rel_comment_p_f"
+                    android:background="#dfecf2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="4"
+                        android:text="0"
+                        android:id="@+id/tv_total_comm_f"/>
 
                     <ImageView
                         android:layout_width="51dp"
@@ -415,7 +423,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="1dp">
+                    android:padding="1dp"
+                    android:id="@+id/lin_like_f">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="4"
+                        android:text="0"
+                        android:id="@+id/tv_total_like_f"/>
 
                     <ImageView
                         android:layout_width="50dp"
@@ -448,44 +464,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/rel_comment_p_f"
-                android:visibility="visible">
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/img_comm_p_f"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_send1"
+                    />
 
 
-
-                <EditText
+                <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ed_comment_p_f"
-                    android:background="@drawable/style_rel_p_f"
-                    android:layout_marginRight="15sp"
+                    android:layout_toLeftOf="@id/img_comm_p_f"
+                    android:layout_marginRight="10sp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:lines="3"
-                    android:gravity="right|top"
-                    android:paddingRight="3dp"
+                    android:maxLines="3"
+                    android:gravity="right|bottom"
+                    android:paddingRight="5dp"
                     android:paddingTop="3dp"
-                    android:hint="أضافة تعليق"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:id="@+id/btn_comment_p_f"
-                    android:layout_below="@+id/ed_comment_p_f"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/style_rel_p_f"
-                    android:text="أرسال"/>
+                    android:hint="كتابة تعليق"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_exit_comment_p_f"
                     android:layout_below="@id/ed_comment_p_f"
-                    android:layout_toLeftOf="@id/btn_comment_p_f"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="#070e5b"
                     android:textStyle="bold"
                     android:text="إلغاء"
@@ -500,7 +515,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_centerHorizontal="true"
                 android:background="#58dcebfd"
-                android:visibility="invisible"
                 />
 
         </RelativeLayout>
