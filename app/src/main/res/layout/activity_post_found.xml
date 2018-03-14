@@ -6,6 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="atfalna.atfalna.Show_All_Post_Found.Post_Found_Activity">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_000">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="50dp"
@@ -20,7 +32,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:id="@+id/img_date_p_f"
-        android:src="@drawable/ic_calendar1"
+        android:src="@drawable/ic_date_p1"
         android:layout_toLeftOf="@id/img_logo_f"
         android:layout_below="@+id/tv_user_name_f"
         android:layout_marginRight="10dp"
@@ -49,20 +61,35 @@
         android:text="20/1/2018"
         android:textStyle="bold" />
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/img_time_p_f"
+            android:src="@drawable/ic_time_p"
+            android:layout_toLeftOf="@id/tv_date_f"
+            android:layout_below="@id/tv_user_name_f"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/tv_time_p_f"
+            android:src="@drawable/ic_time_p"
+            android:layout_toLeftOf="@id/img_time_p_f"
+            android:layout_below="@id/tv_user_name_f"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="5dp"
+            android:text="10:30 pm"
+            android:textStyle="bold"/>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/code_p"
         />
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_below="@id/img_logo_f"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -70,14 +97,16 @@
             android:id="@+id/rel_data_f"
             android:gravity="center_vertical"
             android:layout_marginTop="5dp"
+            android:layout_below="@id/rel_000"
            >
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="140dp"
             android:id="@+id/img_p_f"
             android:src="@drawable/image_parson"
             android:layout_marginTop="2dp"
+            android:scaleType="centerInside"
             />
 
         <RelativeLayout
@@ -95,7 +124,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/ic_date_f"
-                android:src="@drawable/ic_date"
+                android:src="@drawable/ic_date_2"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dp"/>
 
@@ -157,7 +186,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/img_gender_f"
-                android:src="@drawable/ic_gender"
+                android:src="@drawable/ic_gender_p"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"/>
@@ -185,7 +214,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/img_city"
-                android:src="@drawable/ic_map"
+                android:src="@drawable/ic_city_p"
                 android:layout_toLeftOf="@id/tv_gender_f"
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true"/>
@@ -226,7 +255,7 @@
                 android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:id="@+id/ic_map_f"
-                android:src="@drawable/ic_user_map"
+                android:src="@drawable/ic_place_p"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
@@ -272,7 +301,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/img_phone_f"
-                android:src="@drawable/ic_phone"
+                android:src="@drawable/ic_phone_p"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
@@ -316,7 +345,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/img_info_f"
-                android:src="@drawable/ic_info"
+                android:src="@drawable/ic_note_p"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"/>
@@ -375,9 +404,9 @@
                     android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_share2" />
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_share_p" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -405,9 +434,9 @@
                         android:id="@+id/tv_total_comm_f"/>
 
                     <ImageView
-                        android:layout_width="51dp"
-                        android:layout_height="31dp"
-                        android:src="@drawable/ic_comment2"/>
+                        android:layout_width="40dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_comment_p"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -434,7 +463,7 @@
                         android:id="@+id/tv_total_like_f"/>
 
                     <ImageView
-                        android:layout_width="50dp"
+                        android:layout_width="45dp"
                         android:layout_height="30dp"
                         android:src="@drawable/ic_solidarity1"/>
                     <TextView

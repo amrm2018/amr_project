@@ -139,7 +139,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
         @Override
         public View getView(final int i, View view, ViewGroup viewGroup) {
 
-          LayoutInflater layoutInflater=getLayoutInflater();
+            LayoutInflater layoutInflater=getLayoutInflater();
             View v1 =layoutInflater.inflate(R.layout.row_itme_fonud,null);
 
             TextView code_p_f =v1.findViewById(R.id.tv_code_post_f_list);
