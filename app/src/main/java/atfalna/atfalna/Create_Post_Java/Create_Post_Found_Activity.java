@@ -37,8 +37,11 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
 
     EditText ED_day,ED_year,ED_phone,ED_place_the_case , ED_info_the_case ;
+
     Spinner SP_month ,SP_city;
+
     RadioButton RD_male , RD_female ;
+
     TextView TV_show_month , TV_show_City ,TV_show_user_email  , tv_show_user_name_f , tv_show_user_id_f;
 
     GloablV gloablV;

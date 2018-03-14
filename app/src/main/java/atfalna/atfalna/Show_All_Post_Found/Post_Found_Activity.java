@@ -48,24 +48,24 @@ public class Post_Found_Activity extends AppCompatActivity {
 
         Intent data_p_f = getIntent();
 
-        tv_code_p.setText(data_p_f.getExtras().getString("text_code").trim());
-        tv_email_user.setText(data_p_f.getExtras().getString("text_email").trim());
-        tv_datetime.setText(data_p_f.getExtras().getString("text_date").trim());
-        tv_city.setText(data_p_f.getExtras().getString("text_city").trim());
-        tv_day.setText(data_p_f.getExtras().getString("text_day").trim());
-        tv_month.setText(data_p_f.getExtras().getString("text_month").trim());
-        tv_year.setText(data_p_f.getExtras().getString("text_year").trim());
-        tv_gender.setText(data_p_f.getExtras().getString("text_gender").trim());
-        tv_phone.setText(data_p_f.getExtras().getString("text_phone").trim());
-        tv_place.setText(data_p_f.getExtras().getString("text_place"));
-        tv_info.setText(data_p_f.getExtras().getString("text_info").trim());
-
-        String simg = data_p_f.getExtras().getString("text_img");
+        tv_code_p.setText(data_p_f.getExtras().getString("text_code_p_f").trim());
+      //  tv_email_user.setText(data_p_f.getExtras().getString("text_email").trim());
+        tv_datetime.setText(data_p_f.getExtras().getString("text_date_p_f").trim());
+//        tv_city.setText(data_p_f.getExtras().getString("text_city_f").trim());
+//        tv_day.setText(data_p_f.getExtras().getString("text_day_f").trim());
+//        tv_month.setText(data_p_f.getExtras().getString("text_month_f").trim());
+//        tv_year.setText(data_p_f.getExtras().getString("text_year_f").trim());
+//        tv_gender.setText(data_p_f.getExtras().getString("text_gender").trim());
+//        tv_phone.setText(data_p_f.getExtras().getString("text_phone").trim());
+//        tv_place.setText(data_p_f.getExtras().getString("text_place"));
+//        tv_info.setText(data_p_f.getExtras().getString("text_info").trim());
+//
+        String simg = data_p_f.getExtras().getString("text_img_f");
 //        Uri uri =Uri.parse(img);
 //        img_p.setImageURI(uri);
 
         Picasso.with(getApplicationContext())
-                .load("http://192.168.1.103/app_atfalna/img_found/"+simg)
+                .load("http://192.168.43.104/atfalna_app/img_found/"+simg)
                 .into(img_p_f);
 
         // Comment_p_f
@@ -78,7 +78,6 @@ public class Post_Found_Activity extends AppCompatActivity {
         ed_comm_p_f.setSelected(false);
 
     }
-
     public  void btn_exit_comment_p_f (View view){
         rel_comm_p_f.setVisibility(View.INVISIBLE);
         list_comm_p_f.setVisibility(View.VISIBLE);

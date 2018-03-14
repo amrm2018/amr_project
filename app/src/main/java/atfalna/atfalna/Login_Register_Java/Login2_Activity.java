@@ -56,7 +56,6 @@ public class Login2_Activity extends AppCompatActivity {
                 Login_btn_Login(view);
             }
         });
-
     }
 
     ProgressDialog dialog;
@@ -87,16 +86,15 @@ public class Login2_Activity extends AppCompatActivity {
                                     .putString("password", Log_in_password)
                                     .apply();
 
-                            // OR
+//                                    OR
 //                                        SharedPreferences shrd =  getSharedPreferences("MyPref", Context.MODE_PRIVATE);
 //                                        SharedPreferences.Editor editor= shrd.edit();
 //                                        editor.putString("email",Log_in_name);
 //                                        editor.putString("password",Log_in_password);
 //                                        editor.apply();
                         }
-
-                        dialog.dismiss();
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        dialog.dismiss();
                     }else {
                         dialog.dismiss();
                         Toast.makeText(Login2_Activity.this, "البيانات غير صحيحة", Toast.LENGTH_SHORT).show();
@@ -118,7 +116,6 @@ public class Login2_Activity extends AppCompatActivity {
     }
 
    public void go_main(View view) {
-
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
+   }
 }

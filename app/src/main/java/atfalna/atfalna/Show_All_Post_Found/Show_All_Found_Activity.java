@@ -33,8 +33,8 @@ import atfalna.atfalna.R;
 public class Show_All_Found_Activity extends AppCompatActivity {
 
     RequestQueue requestQueue;
-    String url="http://192.168.1.103/app_atfalna/show_all_found_db_atf.php";
-    ArrayList<listitme> listMovis= new ArrayList<listitme>();
+    String url="http://192.168.43.104/atfalna_app/show_all_post_found.php";
+    ArrayList<listitme_f> listMovis = new ArrayList<listitme_f>();
     ListView listView ;
     TextView text_total , text_email_user ;
 
@@ -64,20 +64,34 @@ public class Show_All_Found_Activity extends AppCompatActivity {
                             for (int i = 0 ; i < jsonArray.length(); i++) {
                                 JSONObject res = jsonArray.getJSONObject(i);
 
-                                String code_post_found = res.getString("code_post");
-                                String date_time = res.getString("date_time_post");
-                                String img = res.getString("img_found");
-                                String city = res.getString("city");
-                                String day = res.getString("day");
-                                String month = res.getString("month");
-                                String year = res.getString("year");
-                                String gender = res.getString("gender_the_case");
-                                String phone = res.getString("phone");
-                                String place_thecase = res.getString("place_the_case");
-                                String info_thecase = res.getString("info_the_case");
-                                String email_user = res.getString("email_user");
 
-                                listMovis.add(new listitme(code_post_found,date_time,img,city,day,month,year,gender,phone,place_thecase,info_thecase,email_user));
+                                String code_p_f = res.getString("code_p_f");
+                                String date_p_f= res.getString("date_p_f");
+                                String time_p_f = res.getString("time_p_f");
+
+                                String city_f = res.getString("city_f");
+
+                                String day_f = res.getString("day_f");
+                                String month_f = res.getString("month_f");
+                                String year_f = res.getString("year_f");
+
+                                String gender_f = res.getString("gender_f");
+                                String phone_f = res.getString("phone_f");
+
+                                String place_case_f = res.getString("place_case_f");
+                                String info_case_f = res.getString("info_case_f");
+                                String img_f = res.getString("img_f");
+
+                                String us_id_f = res.getString("us_id");
+                                String user_name_f = res.getString("user_name_f");
+
+                                listMovis.add(new listitme_f(code_p_f,date_p_f,time_p_f,
+                                        city_f,
+                                        day_f,month_f,year_f,
+                                        gender_f,phone_f,
+                                        place_case_f,info_case_f,
+                                        img_f,
+                                        us_id_f , user_name_f));
                             }
 
                         } catch (JSONException e) {
@@ -100,9 +114,9 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
     class ListAdapter extends BaseAdapter{
 
-        ArrayList<listitme> listA = new ArrayList<listitme>();
+        ArrayList<listitme_f> listA = new ArrayList<listitme_f>();
 
-      ListAdapter(ArrayList<listitme> listitme) {
+      ListAdapter(ArrayList<listitme_f> listitme) {
             this.listA=listitme;
         }
 
@@ -114,7 +128,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
         @Override
         public Object getItem(int i) {
-            return listA.get(i).code_p;
+            return listA.get(i).code_p_f;
         }
 
         @Override
@@ -125,24 +139,24 @@ public class Show_All_Found_Activity extends AppCompatActivity {
         @Override
         public View getView(final int i, View view, ViewGroup viewGroup) {
 
-                       LayoutInflater layoutInflater=getLayoutInflater();
+          LayoutInflater layoutInflater=getLayoutInflater();
             View v1 =layoutInflater.inflate(R.layout.row_itme_fonud,null);
 
-            TextView code_p =v1.findViewById(R.id.tv_code_post_f_list);
-            TextView email_user =v1.findViewById(R.id.tv_email_user_list);
-            TextView city =v1.findViewById(R.id.tv_city_list);
-            TextView datetime =v1.findViewById(R.id.tv_datetime_list);
+            TextView code_p_f =v1.findViewById(R.id.tv_code_post_f_list);
+            TextView user_name_p_f =v1.findViewById(R.id.tv_email_user_list);
+            TextView city_f =v1.findViewById(R.id.tv_city_list);
+            TextView date_p_f =v1.findViewById(R.id.tv_datetime_list);
             //TextView phone =v1.findViewById(R.id.tv_phone_list);
 
             ImageView imgfound =v1.findViewById(R.id.img_post_found_list);
 
-            code_p.setText(listA.get(i).code_p);
-            email_user.setText(listA.get(i).email_user_f);
-            city.setText(listA.get(i).city_f);
-            datetime.setText(listA.get(i).date_time_p);
+            code_p_f.setText(listA.get(i).code_p_f);
+            user_name_p_f.setText(listA.get(i).user_name_f);
+            city_f.setText(listA.get(i).city_f);
+            date_p_f.setText(listA.get(i).date_p_f);
             // phone.setText(listA.get(i).phone);
 
-            Picasso.with(getApplicationContext()).load("http://192.168.1.103/app_atfalna/img_found/"+listA.get(i).img_f).into(imgfound);
+            Picasso.with(getApplicationContext()).load("http://192.168.43.104/atfalna_app/img_found/"+listA.get(i).img_f).into(imgfound);
 
             imgfound.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -150,18 +164,23 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
                 Intent openPost= new Intent(getApplicationContext(),Post_Found_Activity.class);
 
-                    openPost.putExtra("text_code",listA.get(i).code_p);
-                    openPost.putExtra("text_date",listA.get(i).date_time_p);
-                    openPost.putExtra("text_img",listA.get(i).img_f);
-                    openPost.putExtra("text_city",listA.get(i).city_f);
-                    openPost.putExtra("text_day",listA.get(i).day_f);
-                    openPost.putExtra("text_month",listA.get(i).month_f);
-                    openPost.putExtra("text_year",listA.get(i).year_f);
-                    openPost.putExtra("text_gender",listA.get(i).gender_thecase);
-                    openPost.putExtra("text_phone",listA.get(i).phone);
-                    openPost.putExtra("text_place",listA.get(i).place_thecase);
-                    openPost.putExtra("text_info",listA.get(i).info_thecase);
-                    openPost.putExtra("text_email",listA.get(i).email_user_f);
+                    openPost.putExtra("text_code_p_f",listA.get(i).code_p_f);
+                    openPost.putExtra("text_date_p_f",listA.get(i).date_p_f);
+                    openPost.putExtra("text_time_p_f",listA.get(i).time_p_f);
+
+                    openPost.putExtra("text_city_f",listA.get(i).city_f);
+
+                    openPost.putExtra("text_day_f",listA.get(i).day_f);
+                    openPost.putExtra("text_month_f",listA.get(i).month_f);
+                    openPost.putExtra("text_year_f",listA.get(i).year_f);
+
+                    openPost.putExtra("text_gender_f",listA.get(i).gender_f);
+                    openPost.putExtra("text_phone_f",listA.get(i).phone_f);
+                    openPost.putExtra("text_place_case_f",listA.get(i).place_case_f);
+                    openPost.putExtra("text_info_case_f",listA.get(i).info_case_f);
+                    openPost.putExtra("text_img_f",listA.get(i).img_f);
+                    openPost.putExtra("text_us_id_f",listA.get(i).us_id_f);
+                    openPost.putExtra("text_usser_name_f",listA.get(i).user_name_f);
 
                  startActivity(openPost);
                 }

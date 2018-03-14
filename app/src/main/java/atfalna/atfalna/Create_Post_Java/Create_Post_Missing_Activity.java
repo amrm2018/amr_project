@@ -52,7 +52,6 @@ public class Create_Post_Missing_Activity extends AppCompatActivity {
     GloablV  gloablV;
     String   S_email_us ,S_user_id_m , S_user_name_m ;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

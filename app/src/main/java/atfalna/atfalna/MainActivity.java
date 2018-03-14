@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void get_userid() {
 
-        String urlid="http://192.168.1.2/atfalna_app/show_userid.php?useremail="+ S_user_email;
+        String urlid="http://192.168.43.104/atfalna_app/show_userid.php?useremail="+ S_user_email;
 
         requestQueue= Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, urlid,
