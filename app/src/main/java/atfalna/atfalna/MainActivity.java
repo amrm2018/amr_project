@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         S_user_email = gloablV.getEmail_user();
         textView_email.setText(gloablV.getEmail_user());
 
-        urlid="http://192.168.1.4/atfalna_app/show_userid.php?useremail="+ S_user_email;
+        urlid="http://192.168.1.3/atfalna_app/show_userid.php?useremail="+ S_user_email;
 
         get_userid();//خاص بانه يجيب ال id بتاع ال user اللى يدخل الapp
 

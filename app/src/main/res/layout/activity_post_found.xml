@@ -395,7 +395,7 @@
                     android:gravity="center"
                     android:padding="1dp"
                     android:onClick="btn_show_rel_comment_p_f"
-                    android:background="#dfecf2">
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -469,19 +469,31 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/img_comm_p_f"
+                    android:id="@+id/img_send_comm_p_f_1"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/ic_send1"
                     />
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/img_send_comm_p_f_2"
+                    android:onClick="btn_comment_p_f"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_send2"
+                    android:visibility="invisible"
+                    />
 
-                <AutoCompleteTextView
+
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ed_comment_p_f"
-                    android:layout_toLeftOf="@id/img_comm_p_f"
+                    android:layout_toLeftOf="@id/img_send_comm_p_f_1"
                     android:layout_marginRight="10sp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
@@ -514,7 +526,8 @@
                 android:id="@+id/listview_show_all_comment_p_f"
                 android:layout_marginTop="5dp"
                 android:layout_centerHorizontal="true"
-                android:background="#58dcebfd"
+                android:background="#728e9093"
+
                 />
 
         </RelativeLayout>
