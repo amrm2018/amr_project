@@ -12,48 +12,53 @@ import java.util.Map;
 
 public class Send_Data_Post_Missing extends StringRequest {
 
-    private static final String SEND_DATA_URL = "http://192.168.1.103/app_atfalna/post_missing.php"; // "http://localhost/app_atf/register_db_atf.php"
+    private static final String SEND_DATA_URL = "http://192.168.1.2/atfalna_app/post_missing.php";
     private Map<String, String> MapData;
 
-    public Send_Data_Post_Missing(String scity, String sgender, String sphone,
-                                  String sday, String smonth, String syear,
-                                  String scolor_eye, String scolor_hair, String scolor_body,
-                                  String saddress,
-                                  String sbouns, String slength, String swiegth,
-                                  String scase_name, String snickname, String sage_now,
-                                  String snote_m, String simg_m, String semail,
+    public Send_Data_Post_Missing(String city_m,
+                                  String gender_m, String phone_m,
+                                  String day_m, String month_m, String year_m,
+                                  String color_eye_m, String color_hair_m, String color_body_m,
+                                  String address_m,
+                                  String bouns_m, String length_m, String wiegth_m,
+                                  String case_name_m, String nickname_m, String age_now_m,
+                                  String note_m, String img_m,
+                                  String user_id_m,String user_name_m ,
 
                                   Response.Listener<String> listener) {
 
         super(Method.POST, SEND_DATA_URL, listener, null);
         MapData = new HashMap<>();
 
-        MapData.put("city_m", scity);
-        MapData.put("gender_m", sgender);
-        MapData.put("phone_m", sphone);
+        MapData.put("city_m", city_m);
 
-        MapData.put("day_m", sday);
-        MapData.put("month_m", smonth);
-        MapData.put("year_m", syear);
+        MapData.put("gender_m", gender_m);
+        MapData.put("phone_m", phone_m);
 
-        MapData.put("color_eye_m", scolor_eye);
-        MapData.put("color_hair_m", scolor_hair);
-        MapData.put("color_body_m", scolor_body);
+        MapData.put("day_m", day_m);
+        MapData.put("month_m", month_m);
+        MapData.put("year_m", year_m);
 
-       // MapData.put("birth_date_m", sbirth_date);
-        MapData.put("address_m", saddress);
+        MapData.put("color_eye_m", color_eye_m);
+        MapData.put("color_hair_m", color_hair_m);
+        MapData.put("color_body_m", color_body_m);
 
-        MapData.put("bouns_m", sbouns);
-        MapData.put("length_m", slength);
-        MapData.put("wiegth_m", swiegth);
 
-        MapData.put("casename_m", scase_name);
-        MapData.put("nickname_m", snickname);
-        MapData.put("age_now_m", sage_now);
+        MapData.put("address_m", address_m);
 
-        MapData.put("note_m", snote_m);
-        MapData.put("img_m", simg_m);
-        MapData.put("eemail", semail);
+        MapData.put("bouns_m", bouns_m);
+        MapData.put("length_m", length_m);
+        MapData.put("wiegth_m", wiegth_m);
+
+        MapData.put("casename_m", case_name_m);
+        MapData.put("nickname_m", nickname_m);
+        MapData.put("age_now_m", age_now_m);
+
+        MapData.put("note_m", note_m);
+        MapData.put("img_m", img_m);
+
+        MapData.put("user_id_m", user_id_m);
+        MapData.put("user_name_m", user_name_m);
 
     }
 

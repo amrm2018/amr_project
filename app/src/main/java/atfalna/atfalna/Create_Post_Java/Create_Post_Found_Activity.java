@@ -39,13 +39,13 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
     EditText ED_day,ED_year,ED_phone,ED_place_the_case , ED_info_the_case ;
     Spinner SP_month ,SP_city;
     RadioButton RD_male , RD_female ;
-    TextView TV_show_month , TV_show_City ,TV_show_email_user  , tv_show_user_name_f , tv_show_user_id_f;
+    TextView TV_show_month , TV_show_City ,TV_show_user_email  , tv_show_user_name_f , tv_show_user_id_f;
 
     GloablV gloablV;
 
     // send image
-    ImageView imgV ;
-    String encodeimg;
+    ImageView imgV_f ;
+    String encodeimg_f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +93,8 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
 
         gloablV = (GloablV)getApplicationContext();
-        TV_show_email_user=findViewById(R.id.tv_show_email_user);
-        TV_show_email_user.setText(gloablV.getEmail_user());
+        TV_show_user_email=findViewById(R.id.tv_show_email_user);
+        TV_show_user_email.setText(gloablV.getEmail_user());
 
         tv_show_user_name_f=findViewById(R.id.tv_show_user_name_f);
         tv_show_user_name_f.setText(gloablV.getUser_name());
@@ -105,7 +105,7 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
 
 
         //-- send image
-        imgV=findViewById(R.id.img_post_found);
+        imgV_f=findViewById(R.id.img_post_found);
 
     }
     public void back_finish(View view) {
@@ -121,38 +121,44 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         dialog.show();
         dialog.setMessage("لحظة");
         // image
-        Bitmap Bimg=((BitmapDrawable)imgV.getDrawable()).getBitmap();
+        Bitmap Bimg=((BitmapDrawable)imgV_f.getDrawable()).getBitmap();
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-        Bimg.compress(Bitmap.CompressFormat.JPEG,80,byteArrayOutputStream);
-        encodeimg= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
+        Bimg.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        encodeimg_f= Base64.encodeToString(byteArrayOutputStream.toByteArray(),Base64.DEFAULT);
        // encodeimg  هو دا المتغير اللي شايل الصورة
 
         String City = TV_show_City.getText().toString();
+
         String Day = ED_day.getText().toString().trim();
         String Month = TV_show_month.getText().toString();
         String Year = ED_year.getText().toString().trim();
-        String Gender_thecase;
+
+        String Gender_case;
         if (RD_male.isChecked()){
-            Gender_thecase="ذكر";
+            Gender_case="ذكر";
         }else
-            Gender_thecase="أنثى";
+            Gender_case="أنثى";
         String Phone = ED_phone.getText().toString().trim();
+
         String Place = ED_place_the_case.getText().toString();
         String Info = ED_info_the_case.getText().toString();
-        String Email_Us = TV_show_email_user.getText().toString().trim();
 
-        Response.Listener<String> responseLisener = new Response.Listener<String>() {
+    //    int Us_id_f = Integer.parseInt( tv_show_user_id_f.getText().toString());
+        String Us_id_f = tv_show_user_id_f.getText().toString();
+        String User_name_f = tv_show_user_name_f.getText().toString().trim();
+
+        Response.Listener<String> responseLisener_p_f = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if (success) {
-                        Toast.makeText( getApplicationContext() , "تم نشر الحالة ِشكرا لك", Toast.LENGTH_SHORT).show();
-                   dialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "تم نشر الاعلان", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     } else {
-                        Toast.makeText( getApplicationContext() , "يوجد خطأ ( تاكد من البيانات المدخلة)", Toast.LENGTH_SHORT).show();
-                   dialog.dismiss();
+                        Toast.makeText( Create_Post_Found_Activity.this , "يوجد خطأ ( تاكد من البيانات)", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -161,9 +167,15 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         };
 
         Send_Data_Post_Found send_Data_found = new Send_Data_Post_Found(
-                encodeimg,City, Day, Month ,Year,Gender_thecase,Phone,Place,Info, Email_Us,responseLisener);
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        queue.add(send_Data_found);
+                encodeimg_f,
+                City,
+                Day, Month ,Year,
+                Gender_case,Phone,
+                Place,Info,
+                Us_id_f ,User_name_f ,
+                responseLisener_p_f);
+        RequestQueue queue_p_f = Volley.newRequestQueue(getApplicationContext());
+        queue_p_f.add(send_Data_found);
 
     }
 
@@ -177,7 +189,7 @@ public class Create_Post_Found_Activity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode ,data);
         if (requestCode==100 && resultCode==RESULT_OK){
             Uri uri=data.getData();
-            imgV.setImageURI(uri); //  هتحوط الصورة فين
+            imgV_f.setImageURI(uri); //  هتحوط الصورة فين
         }
     }
 }

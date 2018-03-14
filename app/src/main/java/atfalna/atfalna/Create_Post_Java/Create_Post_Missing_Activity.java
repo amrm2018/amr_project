@@ -50,7 +50,7 @@ public class Create_Post_Missing_Activity extends AppCompatActivity {
             S_length_m ,S_wiegth_m;
 
     GloablV  gloablV;
-    String   S_email_us ;
+    String   S_email_us ,S_user_id_m , S_user_name_m ;
 
 
     @Override
@@ -175,6 +175,8 @@ public class Create_Post_Missing_Activity extends AppCompatActivity {
 
         gloablV = (GloablV)getApplicationContext();
         S_email_us = gloablV.getEmail_user();
+        S_user_id_m = gloablV.getUser_id();
+        S_user_name_m =gloablV.getUser_name();
 
     }
 
@@ -234,13 +236,15 @@ public class Create_Post_Missing_Activity extends AppCompatActivity {
         };
 
         Send_Data_Post_Missing send_Data_missing = new Send_Data_Post_Missing(
-                S_city_m, S_gender_m,S_phone_m,
+                S_city_m,
+                S_gender_m,S_phone_m,
                 S_day_m, S_month_m ,S_year_m,
                 S_color_eye_m, S_color_hair_m, S_color_body_m,
-                S_address_m,
-                S_bouns_m,S_length_m,S_wiegth_m,
+                S_address_m, S_bouns_m,
+                S_length_m,S_wiegth_m,
                 S_case_name_m,S_nickname_m,S_age_now_m,
-                S_note_m , encodeimg_m, S_email_us, responseLisener);
+                S_note_m , encodeimg_m,
+                S_user_id_m ,S_user_name_m, responseLisener);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(send_Data_missing);
 

@@ -69,7 +69,7 @@
                 android:layout_marginTop="5dp"
                 android:id="@+id/img_post_found"
                 android:src="@drawable/image_parson"
-                android:scaleType="center"
+                android:scaleType="fitCenter"
                 />
 
             <de.hdodenhof.circleimageview.CircleImageView
