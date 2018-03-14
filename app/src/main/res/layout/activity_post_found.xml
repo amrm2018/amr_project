@@ -22,14 +22,14 @@
         android:id="@+id/img_date_p_f"
         android:src="@drawable/ic_calendar1"
         android:layout_toLeftOf="@id/img_logo_f"
-        android:layout_below="@+id/tv_email_f"
+        android:layout_below="@+id/tv_user_name_f"
         android:layout_marginRight="10dp"
         android:layout_marginTop="3dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_email_f"
+        android:id="@+id/tv_user_name_f"
         android:text="email"
         android:layout_toLeftOf="@id/img_logo_f"
         android:layout_marginRight="10dp"
@@ -42,7 +42,7 @@
         android:id="@+id/tv_date_f"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_email_f"
+        android:layout_below="@id/tv_user_name_f"
         android:layout_marginRight="5dp"
         android:layout_marginTop="4dp"
         android:layout_toLeftOf="@id/img_date_p_f"

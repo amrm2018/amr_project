@@ -26,6 +26,7 @@ import atfalna.atfalna.Show_All_Post_Found.Show_All_Found_Activity;
 public class MainActivity extends AppCompatActivity {
 
     RequestQueue requestQueue;
+    String urlid ;
 
     GloablV gloablV ;
     String S_user_email , S_user_id , S_user_name ;
@@ -46,13 +47,14 @@ public class MainActivity extends AppCompatActivity {
         S_user_email = gloablV.getEmail_user();
         textView_email.setText(gloablV.getEmail_user());
 
+        urlid="http://192.168.1.4/atfalna_app/show_userid.php?useremail="+ S_user_email;
+
         get_userid();//خاص بانه يجيب ال id بتاع ال user اللى يدخل الapp
 
     }
 
     public void get_userid() {
-
-        String urlid="http://192.168.43.104/atfalna_app/show_userid.php?useremail="+ S_user_email;
+        
 
         requestQueue= Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, urlid,

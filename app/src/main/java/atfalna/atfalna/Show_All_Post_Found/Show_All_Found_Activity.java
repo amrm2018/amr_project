@@ -33,7 +33,7 @@ import atfalna.atfalna.R;
 public class Show_All_Found_Activity extends AppCompatActivity {
 
     RequestQueue requestQueue;
-    String url="http://192.168.43.104/atfalna_app/show_all_post_found.php";
+    String url="http://192.168.1.4/atfalna_app/show_all_post_found.php";
     ArrayList<listitme_f> listMovis = new ArrayList<listitme_f>();
     ListView listView ;
     TextView text_total , text_email_user ;
@@ -51,7 +51,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
         assert text_email_user !=null;
         gloablV =(GloablV)getApplicationContext();
-        text_email_user.setText("مرحبا : "+gloablV.getEmail_user());
+        text_email_user.setText("مرحبا : "+gloablV.getUser_name());
 
         requestQueue= Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url,
@@ -156,7 +156,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
             date_p_f.setText(listA.get(i).date_p_f);
             // phone.setText(listA.get(i).phone);
 
-            Picasso.with(getApplicationContext()).load("http://192.168.43.104/atfalna_app/img_found/"+listA.get(i).img_f).into(imgfound);
+            Picasso.with(getApplicationContext()).load("http://192.168.1.4/atfalna_app/img_found/"+listA.get(i).img_f).into(imgfound);
 
             imgfound.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -176,11 +176,14 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
                     openPost.putExtra("text_gender_f",listA.get(i).gender_f);
                     openPost.putExtra("text_phone_f",listA.get(i).phone_f);
+
                     openPost.putExtra("text_place_case_f",listA.get(i).place_case_f);
                     openPost.putExtra("text_info_case_f",listA.get(i).info_case_f);
+
                     openPost.putExtra("text_img_f",listA.get(i).img_f);
+
                     openPost.putExtra("text_us_id_f",listA.get(i).us_id_f);
-                    openPost.putExtra("text_usser_name_f",listA.get(i).user_name_f);
+                    openPost.putExtra("text_user_name_f",listA.get(i).user_name_f);
 
                  startActivity(openPost);
                 }

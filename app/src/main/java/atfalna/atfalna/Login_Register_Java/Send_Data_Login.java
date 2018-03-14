@@ -13,7 +13,7 @@ import java.util.Map;
 
 class Send_Data_Login extends StringRequest  {
 
-    private static final String SEND_DATA_URL = "http://192.168.43.104/atfalna_app/login.php";
+    private static final String SEND_DATA_URL = "http://192.168.1.4/atfalna_app/login.php";
     private Map<String,String> MapData;
 
     public Send_Data_Login(String Login_name, String Login_password, Response.Listener<String> listener) {
