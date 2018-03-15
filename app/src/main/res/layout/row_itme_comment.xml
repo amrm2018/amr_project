@@ -9,7 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="#21dfdddd"
+        app:cardBackgroundColor="#1cd1e0f7"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         >
 
         <RelativeLayout
@@ -28,8 +31,8 @@
                     android:id="@+id/tv_user_name_comm_f_row"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/style_textview_itme_comm"
                     android:paddingBottom="5dp"
                     android:paddingLeft="12dp"
@@ -41,28 +44,27 @@
                     android:textStyle="bold" />
 
                 <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="5dp"
-                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="5dp"
                     android:background="@drawable/style_rel_p_f"
                     app:cardBackgroundColor="#fff"
+                    android:layout_gravity="right"
                     >
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/tv_comment_f_row"
-                            android:maxLines="4"
-                            android:textColor="#000"
-                            android:text="الثقافة يجب على كلّ فرد أن يُثقّف نفسه ويُجدّد معارفه باستمرار، وذلك لأننا في عالم السرعة؛ حيث لا يوجد مكان للأفراد "/>
-
-                    </RelativeLayout>
+                        android:id="@+id/tv_comment_f_row"
+                        android:gravity="right|top"
+                        android:maxLines="4"
+                        android:textColor="#000"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="الثقافة يجب على كلّ فرد أن يُثةhhhhh "/>
 
                 </android.support.v7.widget.CardView>
 
@@ -76,7 +78,7 @@
                         android:id="@+id/tv_date_comm_f_row"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="1dp"
                         android:text="20/10/2018"
                         android:textColor="#5761a3"
                         android:layout_toLeftOf="@id/tv_time_comm_f_row"
@@ -88,7 +90,7 @@
                         android:id="@+id/tv_time_comm_f_row"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="1dp"
                         android:text="10:30 pm"
                         android:textColor="#f579b66c"
                         android:layout_alignParentRight="true"

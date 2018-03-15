@@ -40,7 +40,7 @@ import atfalna.atfalna.R;
 
 public class Post_Found_Activity extends AppCompatActivity {
 
-    TextView tv_code_p, tv_user_name_f, tv_datetime, tv_city, tv_day, tv_month, tv_year, tv_gender, tv_phone,tv_place, tv_info ;
+    TextView tv_code_p, tv_user_name_f, tv_date_p_f,tv_time_p_f, tv_city, tv_day, tv_month, tv_year, tv_gender, tv_phone,tv_place, tv_info ;
 
     ImageView img_p_f  , img_send_comment_p_f_1 ,img_send_comment_p_f_2;
 
@@ -71,7 +71,8 @@ public class Post_Found_Activity extends AppCompatActivity {
 
         tv_code_p = findViewById(R.id.code_p);
         tv_user_name_f = findViewById(R.id.tv_user_name_f);
-        tv_datetime = findViewById(R.id.tv_date_f);
+        tv_date_p_f = findViewById(R.id.tv_date_f);
+        tv_time_p_f = findViewById(R.id.tv_time_p_f);
         tv_city = findViewById(R.id.tv_city_f);
         tv_day = findViewById(R.id.tv_day_f);
         tv_month = findViewById(R.id.tv_month_f);
@@ -88,7 +89,8 @@ public class Post_Found_Activity extends AppCompatActivity {
         tv_code_p.setText(data_p_f.getExtras().getString("text_code_p_f").trim());
         S_code_p_f =data_p_f.getExtras().getString("text_code_p_f");
 
-        tv_datetime.setText(data_p_f.getExtras().getString("text_date_p_f").trim());
+        tv_date_p_f.setText(data_p_f.getExtras().getString("text_date_p_f").trim());
+        tv_time_p_f.setText(data_p_f.getExtras().getString("text_time_p_f").trim());
 
         tv_city.setText(data_p_f.getExtras().getString("text_city_f").trim());
         tv_day.setText(data_p_f.getExtras().getString("text_day_f").trim());
@@ -144,9 +146,18 @@ public class Post_Found_Activity extends AppCompatActivity {
         //List
         listV_comm_p_f = findViewById(R.id.listview_show_all_comment_p_f);
 
+        get_comment_p_f();
+
+
+    }
+    public void get_comment_p_f(){
         //show comment f
+        final TextView tv_total_comm_f =findViewById(R.id.tv_total_comm_f);
         String url_comm_f = "http://192.168.1.3/atfalna_app/show_all_comment_found.php?code_p_f=" + S_code_p_f;
         requestQueue = Volley.newRequestQueue(this);
+
+        listcomment_f.clear();
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url_comm_f,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -156,7 +167,7 @@ public class Post_Found_Activity extends AppCompatActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject res = jsonArray.getJSONObject(i);
-
+                                tv_total_comm_f.setText(String.valueOf(jsonArray.length()));
                                 String code_comm = res.getString("code_comm");
                                 String date_comm = res.getString("date_comm");
                                 String time_comm = res.getString("time_comm");
@@ -183,20 +194,16 @@ public class Post_Found_Activity extends AppCompatActivity {
         });
         requestQueue.add(jsonObjectRequest);
         // end comment
-
     }
 
     //Send_Data_Comment_to_Serveries
-    public void btn_comment_p_f(View view) {
-
+    public void btn_comment_p_f(final View view) {
 
         String comment_p_f = ed_comm_p_f.getText().toString().trim();
         String code_p_f = tv_code_p.getText().toString().trim();
 
         if (comment_p_f.equals("")) {
-
             Toast.makeText(getApplicationContext(), "لا يمكن أضافة تعليق فارغ", Toast.LENGTH_SHORT).show();
-
         } else {
 
             Response.Listener<String> responseLisener = new Response.Listener<String>() {
@@ -209,6 +216,8 @@ public class Post_Found_Activity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "تم أضافة التعليق ", Toast.LENGTH_SHORT).show();
                             ed_comm_p_f.setText("");
                             img_send_comment_p_f_2.setVisibility(View.INVISIBLE);
+                            btn_exit_comment_p_f(view);
+                            get_comment_p_f();
 
                         } else {
                             Toast.makeText(getApplicationContext(), "يوجد خطأ ( تاكد من البيانات )", Toast.LENGTH_SHORT).show();
@@ -276,6 +285,7 @@ public class Post_Found_Activity extends AppCompatActivity {
     public  void btn_exit_comment_p_f (View view){
         rel_comm_p_f.setVisibility(View.INVISIBLE);
         listV_comm_p_f.setVisibility(View.VISIBLE);
+        get_comment_p_f();
     }
 
     public  void btn_show_rel_comment_p_f (View view){

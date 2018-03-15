@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".GloablV"
         android:allowBackup="true"
@@ -22,36 +25,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Login_Register_Java.Login2_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_NoActionBar2" />
-
         <activity
             android:name=".Login_Register_Java.Registration2_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_NoActionBar2" />
-
         <activity
             android:name=".Create_Post_Java.Create_Post_Found_Activity"
             android:theme="@style/AppTheme_NoActionBar_create_Post" />
-
         <activity
             android:name=".Create_Post_Java.Create_Post_Missing_Activity"
-            android:theme="@style/AppTheme_NoActionBar_create_Post"/>
-
-        <activity
-            android:name=".Show_All_Post_Found.Show_All_Found_Activity" />
-
+            android:theme="@style/AppTheme_NoActionBar_create_Post" />
+        <activity android:name=".Show_All_Post_Found.Show_All_Found_Activity" />
         <activity
             android:name=".Show_All_Post_Found.Post_Found_Activity"
-            android:theme="@style/AppTheme_NoActionBar_create_Post"/>
-
-        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme_NoActionBar_create_Post" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_NoActionBar_create_Post"></activity>
-
+            android:theme="@style/AppTheme_NoActionBar_create_Post" />
+        <activity android:name=".Psot_Missing_Activity"></activity>
     </application>
 
 </manifest>
