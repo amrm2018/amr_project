@@ -40,6 +40,7 @@ public class Show_All_Found_Activity extends AppCompatActivity {
 
     GloablV gloablV;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

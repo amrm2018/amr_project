@@ -25,9 +25,9 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_user_name_comm_f_row"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_email_comm_f_row"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/style_textview_itme_comm"
@@ -35,11 +35,10 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="5dp"
-                    android:text="amr121231512154@gmail.com"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
                     android:shadowColor="#000"
-                    />
+                    android:text="amr mohamed"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"

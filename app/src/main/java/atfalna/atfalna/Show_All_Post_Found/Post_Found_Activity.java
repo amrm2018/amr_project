@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -13,31 +17,34 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import atfalna.atfalna.Comment_Java.Send_Data_Comment_F;
+
+import atfalna.atfalna.Comment_Java.listitme_comm_f;
 import atfalna.atfalna.GloablV;
 
 import atfalna.atfalna.R;
 
 public class Post_Found_Activity extends AppCompatActivity {
 
-    TextView tv_code_p, tv_user_name_f, tv_datetime, tv_city,
-            tv_day, tv_month, tv_year,
-            tv_gender, tv_phone,tv_place, tv_info ;
+    TextView tv_code_p, tv_user_name_f, tv_datetime, tv_city, tv_day, tv_month, tv_year, tv_gender, tv_phone,tv_place, tv_info ;
 
     ImageView img_p_f  , img_send_comment_p_f_1 ,img_send_comment_p_f_2;
 
     RelativeLayout rel_comm_p_f ;
-
-    ListView list_comm_p_f;
-
     EditText ed_comm_p_f;
 
     String S_user_id_f ;// صاحب البوست
@@ -47,28 +54,39 @@ public class Post_Found_Activity extends AppCompatActivity {
 
    GloablV gloablV ;
 
+
+   // من هنا الجزء الخاص بالتعليقات
+   RequestQueue requestQueue;
+
+    ArrayList<listitme_comm_f> listcomment_f = new ArrayList<listitme_comm_f>();
+    ListView listV_comm_p_f;
+
+    String S_code_p_f ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_found);
 
-        tv_code_p=findViewById(R.id.code_p);
-        tv_user_name_f=findViewById(R.id.tv_user_name_f);
-        tv_datetime=findViewById(R.id.tv_date_f);
-        tv_city=findViewById(R.id.tv_city_f);
-        tv_day=findViewById(R.id.tv_day_f);
-        tv_month=findViewById(R.id.tv_month_f);
-        tv_year=findViewById(R.id.tv_year_f);
-        tv_gender=findViewById(R.id.tv_gender_f);
-        tv_phone=findViewById(R.id.tv_phone_f);
-        tv_place=findViewById(R.id.tv_place_f);
-        tv_info=findViewById(R.id.tv_info_f);
+        tv_code_p = findViewById(R.id.code_p);
+        tv_user_name_f = findViewById(R.id.tv_user_name_f);
+        tv_datetime = findViewById(R.id.tv_date_f);
+        tv_city = findViewById(R.id.tv_city_f);
+        tv_day = findViewById(R.id.tv_day_f);
+        tv_month = findViewById(R.id.tv_month_f);
+        tv_year = findViewById(R.id.tv_year_f);
+        tv_gender = findViewById(R.id.tv_gender_f);
+        tv_phone = findViewById(R.id.tv_phone_f);
+        tv_place = findViewById(R.id.tv_place_f);
+        tv_info = findViewById(R.id.tv_info_f);
 
         img_p_f = findViewById(R.id.img_p_f);
 
         Intent data_p_f = getIntent();
 
         tv_code_p.setText(data_p_f.getExtras().getString("text_code_p_f").trim());
+        S_code_p_f =data_p_f.getExtras().getString("text_code_p_f");
 
         tv_datetime.setText(data_p_f.getExtras().getString("text_date_p_f").trim());
 
@@ -84,26 +102,25 @@ public class Post_Found_Activity extends AppCompatActivity {
 
         String simg = data_p_f.getExtras().getString("text_img_f");
 
-        S_user_id_f= data_p_f.getExtras().getString("text_us_id_f");
-       // S_user_name= data_p_f.getExtras().getString("text_user_name_f");
+        S_user_id_f = data_p_f.getExtras().getString("text_us_id_f");
+        // S_user_name= data_p_f.getExtras().getString("text_user_name_f");
         tv_user_name_f.setText(data_p_f.getExtras().getString("text_user_name_f").trim());
 
 
-
         Picasso.with(getApplicationContext())
-                .load("http://192.168.1.3/atfalna_app/img_found/"+simg)
+                .load("http://192.168.1.3/atfalna_app/img_found/" + simg)
                 .into(img_p_f);
 
-        // Comment_p_f
-        rel_comm_p_f =findViewById(R.id.rel_comment_p_f);
+        gloablV = (GloablV) getApplicationContext();
+        S_user_name_login = gloablV.getUser_name();
+        S_user_id_login = gloablV.getUser_id();
 
+        //send  Comment_p_f
+        rel_comm_p_f = findViewById(R.id.rel_comment_p_f);
 
-        img_send_comment_p_f_1=findViewById(R.id.img_send_comm_p_f_1);
-        img_send_comment_p_f_2=findViewById(R.id.img_send_comm_p_f_2);
-        ed_comm_p_f =findViewById(R.id.ed_comment_p_f);
-        final String S_ed_comm_p_f =ed_comm_p_f.getText().toString().trim();
-        final String ed_comm = "[a-zA-Z0-9._-]";
-
+        img_send_comment_p_f_1 = findViewById(R.id.img_send_comm_p_f_1);
+        img_send_comment_p_f_2 = findViewById(R.id.img_send_comm_p_f_2);
+        ed_comm_p_f = findViewById(R.id.ed_comment_p_f);
 
         ed_comm_p_f.addTextChangedListener(new TextWatcher() {
             @Override
@@ -124,14 +141,48 @@ public class Post_Found_Activity extends AppCompatActivity {
             }
         });
 
-        gloablV = (GloablV) getApplicationContext();
-        S_user_name_login =gloablV.getUser_name();
-        S_user_id_login =gloablV.getUser_id();
-
         //List
-        list_comm_p_f = findViewById(R.id.listview_show_all_comment_p_f);
+        listV_comm_p_f = findViewById(R.id.listview_show_all_comment_p_f);
 
+        //show comment f
+        String url_comm_f = "http://192.168.1.3/atfalna_app/show_all_comment_found.php?code_p_f=" + S_code_p_f;
+        requestQueue = Volley.newRequestQueue(this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url_comm_f,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("allcomment_p_f");
 
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject res = jsonArray.getJSONObject(i);
+
+                                String code_comm = res.getString("code_comm");
+                                String date_comm = res.getString("date_comm");
+                                String time_comm = res.getString("time_comm");
+                                String comment_f = res.getString("comment");
+                                String us_id_comm = res.getString("us_id");
+                                String user_name_comm = res.getString("user_name");
+
+                                listcomment_f.add(new listitme_comm_f(code_comm,
+                                        date_comm, time_comm,
+                                        comment_f,
+                                        us_id_comm, user_name_comm));
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        listData_comm_f();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley", "Error");
+            }
+        });
+        requestQueue.add(jsonObjectRequest);
+        // end comment
 
     }
 
@@ -174,14 +225,62 @@ public class Post_Found_Activity extends AppCompatActivity {
         }
     }
 
+    public void listData_comm_f(){
+        ListAdapter_comm ad_comm = new ListAdapter_comm(listcomment_f);
+        listV_comm_p_f.setAdapter(ad_comm);
+    }
+
+    class ListAdapter_comm extends BaseAdapter {
+
+        ArrayList<listitme_comm_f> list_comm = new ArrayList<listitme_comm_f>();
+
+        ListAdapter_comm(ArrayList<listitme_comm_f> listitme) {
+            this.list_comm=listitme;
+        }
+
+        @Override
+        public int getCount() {
+            return list_comm.size();
+        }
+        @Override
+        public Object getItem(int i) {
+            return list_comm.get(i).comment_f;
+        }
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+        @Override
+        public View getView(final int i, View view, ViewGroup viewGroup) {
+
+            LayoutInflater layoutInflater=getLayoutInflater();
+            View v_comm =layoutInflater.inflate(R.layout.row_itme_comment,null);
+
+            TextView comment_f =v_comm.findViewById(R.id.tv_comment_f_row);
+            TextView date_comm_f =v_comm.findViewById(R.id.tv_date_comm_f_row);
+            TextView time_comm_f =v_comm.findViewById(R.id.tv_time_comm_f_row);
+            TextView user_name_comm_f =v_comm.findViewById(R.id.tv_user_name_comm_f_row);
+
+            String code_comm , us_id_comm ;
+            code_comm=list_comm.get(i).code_comm;
+            us_id_comm=list_comm.get(i).us_id;
+            comment_f.setText(list_comm.get(i).comment_f);
+            date_comm_f.setText(list_comm.get(i).date_comm);
+            time_comm_f.setText(list_comm.get(i).time_comm);
+            user_name_comm_f.setText(list_comm.get(i).user_name);
+
+            return v_comm;
+        }
+    }
+
     public  void btn_exit_comment_p_f (View view){
         rel_comm_p_f.setVisibility(View.INVISIBLE);
-        list_comm_p_f.setVisibility(View.VISIBLE);
+        listV_comm_p_f.setVisibility(View.VISIBLE);
     }
 
     public  void btn_show_rel_comment_p_f (View view){
         rel_comm_p_f.setVisibility(View.VISIBLE);
-        list_comm_p_f.setVisibility(View.INVISIBLE);
+        listV_comm_p_f.setVisibility(View.INVISIBLE);
     }
 
 

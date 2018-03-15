@@ -555,7 +555,7 @@
                 android:id="@+id/listview_show_all_comment_p_f"
                 android:layout_marginTop="5dp"
                 android:layout_centerHorizontal="true"
-                android:background="#728e9093"
+                android:background="#722677ef"
 
                 />
 
